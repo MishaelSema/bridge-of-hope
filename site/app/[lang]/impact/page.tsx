@@ -58,7 +58,7 @@ export default async function ImpactPage({
             </ul>
           </div>
           <div aria-hidden className="gutter-rule hidden w-px md:block" />
-          <div className="md:pl-14">
+          <div className="flex flex-col md:pl-14">
             <h2 className="display max-w-[16ch] text-[clamp(1.75rem,3.2vw,2.6rem)]">
               {p.reportHeading}
             </h2>
