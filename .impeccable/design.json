@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T00:00:00.000Z",
+  "title": "Design System: Bridge of Hope",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f6f1e7",
+        "tonalRamp": ["#2a251c", "#4b4335", "#6f6450", "#948873", "#b8ac95", "#d3cabb", "#e7ddcb", "#f6f1e7"]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Deep Paper",
+        "canonical": "#efe8da",
+        "tonalRamp": ["#292419", "#4a4132", "#6e6250", "#93866f", "#b7aa91", "#d1c4a9", "#e4d9c4", "#efe8da"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Photogravure Ink",
+        "canonical": "#1c1a17",
+        "tonalRamp": ["#0a0908", "#131211", "#1c1a17", "#33302a", "#4d4941", "#67635c", "#8b877e", "#b0aba1"]
+      },
+      "grey": {
+        "role": "neutral",
+        "displayName": "Caption Grey",
+        "canonical": "#67635c",
+        "tonalRamp": ["#1f1d19", "#333029", "#4a463e", "#67635c", "#837f74", "#9d998d", "#bab6aa", "#dbd8cd"],
+        "note": "5.31:1 on paper, 4.9:1 on paper-deep — WCAG 2.2 AA drove this value; it is a legibility floor, not a taste choice."
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#d3cabb",
+        "tonalRamp": ["#413b30", "#5e5748", "#7f7767", "#9f9787", "#bab1a0", "#c7bead", "#d3cabb", "#efe9dd"]
+      },
+      "live": {
+        "role": "primary",
+        "displayName": "Live Red",
+        "canonical": "#a32127",
+        "tonalRamp": ["#2a0a0c", "#461013", "#661419", "#8a1b1f", "#a32127", "#bf3539", "#d4585b", "#e88e90"],
+        "note": "6.65:1 on paper. One action or one urgent figure per view (The One Red Rule); also focus rings and form errors."
+      },
+      "plate-base": {
+        "role": "neutral",
+        "displayName": "Plate Base",
+        "canonical": "#b8b2a6",
+        "tonalRamp": ["#33302b", "#4b473f", "#66615a", "#827d73", "#9d9789", "#b8b2a6", "#cfc9bd", "#e6e1d7"],
+        "note": "Photogravure field grades light #a9a396 → mid #8f8b83 → dark #6f6a61 under a multiply grain overlay."
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Foundation name on the opening spread; didone at ~12ch, ragged." },
+      "page-title": { "displayName": "Page Title", "purpose": "Single h1 of every inner page, capped at 15ch." },
+      "headline": { "displayName": "Headline", "purpose": "The claim posed on the left page of each home spread." },
+      "title": { "displayName": "Title", "purpose": "Section headings on inner pages." },
+      "figure": { "displayName": "Figure", "purpose": "Impact numbers and record rows; didone numerals at display scale." },
+      "body": { "displayName": "Body", "purpose": "All running text, 54–62ch max measure." },
+      "lead": { "displayName": "Lead", "purpose": "The one paragraph under a page title, 58ch." },
+      "caption": { "displayName": "Caption", "purpose": "Ranked lines under plates and figures, form labels, column heads — uppercase, in Grey." },
+      "label": { "displayName": "Control Label", "purpose": "Button text — uppercase, 0.16em tracking." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "spread-in",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1); animation-timeline: view(); animation-range: entry 4% cover 26%; opacity 0.35→1, translateY 18px→0",
+        "purpose": "The one authored moment: a photogravure plate rises into its frame as the spread turns. Only applied inside @supports (animation-timeline: view()) and prefers-reduced-motion: no-preference; content is visible without it."
+      },
+      {
+        "name": "state-transition",
+        "value": "200ms ease on color / opacity",
+        "purpose": "All hover and focus state changes (button fills, link opacity, nav Grey→Ink, input underline darkening). Never elevation."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration 0.01ms, iteration 1, transition-duration 0.01ms, scroll-behavior auto (!important)",
+        "purpose": "Global prefers-reduced-motion block; the site is fully usable with zero motion."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one commit action of a section: red stamp, paper label, fills to ink on hover/focus.",
+      "html": "<button class=\"ds-btn-primary\">WRITE TO THE FOUNDATION</button>",
+      "css": ".ds-btn-primary { background: var(--color-live, #a32127); color: var(--color-paper, #f6f1e7); font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.8rem; font-weight: 400; line-height: 1.5; letter-spacing: 0.16em; text-transform: uppercase; padding: 16px 32px; border: 0; border-radius: 0; cursor: pointer; transition: background-color 200ms; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: var(--color-ink, #1c1a17); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-live, #a32127); outline-offset: 3px; } .ds-btn-primary:disabled { opacity: 0.6; cursor: default; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary tier: ink hairline box that fills solid ink on hover/focus.",
+      "html": "<button class=\"ds-btn-outline\">PARTNER WITH US</button>",
+      "css": ".ds-btn-outline { background: transparent; color: var(--color-ink, #1c1a17); font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.8rem; font-weight: 400; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 24px; border: 1px solid var(--color-ink, #1c1a17); border-radius: 0; cursor: pointer; transition: background-color 200ms, color 200ms; } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { background: var(--color-ink, #1c1a17); color: var(--color-paper, #f6f1e7); } .ds-btn-outline:focus-visible { outline: 2px solid var(--color-live, #a32127); outline-offset: 3px; }"
+    },
+    {
+      "name": "Action Text Link",
+      "kind": "custom",
+      "refersTo": "link-action",
+      "description": "The red inline action: text-only, fades to 70% on hover, optional hairline-underlined directional mark. One per view.",
+      "html": "<a class=\"ds-link-action\" href=\"#support\">Support the work <span class=\"ds-arrow\" aria-hidden=\"true\">&#8595;</span></a>",
+      "css": ".ds-link-action { display: inline-block; color: var(--color-live, #a32127); font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.95rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: opacity 200ms; } .ds-link-action:hover { opacity: 0.7; } .ds-link-action:focus-visible { outline: 2px solid var(--color-live, #a32127); outline-offset: 3px; } .ds-link-action .ds-arrow { margin-left: 12px; border-bottom: 1px solid currentColor; padding-bottom: 2px; }"
+    },
+    {
+      "name": "Ruled Form Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Boxless field: bottom hairline only, caption label above, underline darkens to ink on focus, red uppercase error below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-name\">NAME</label><input class=\"ds-field-input\" id=\"ds-name\" name=\"name\" type=\"text\" required /><p class=\"ds-field-error\" role=\"alert\">THIS FIELD IS REQUIRED.</p></div>",
+      "css": ".ds-field-label { display: block; font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.72rem; font-weight: 400; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-grey, #67635c); } .ds-field-input { display: block; margin-top: 12px; width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--color-rule, #d3cabb); border-radius: 0; padding: 12px 0; font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 1rem; line-height: 1.65; color: var(--color-ink, #1c1a17); transition: border-color 200ms; } .ds-field-input::placeholder { color: var(--color-grey, #67635c); } .ds-field-input:focus, .ds-field-input:focus-visible { border-bottom-color: var(--color-ink, #1c1a17); outline: none; } .ds-field-error { margin-top: 8px; font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.82rem; line-height: 1.5; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-live, #a32127); }"
+    },
+    {
+      "name": "Sticky Editorial Header",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Hairline sticky bar: didone wordmark, tracked sans links, grey language switch, native disclosure menu on mobile.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"/\">Bridge of Hope</a><nav class=\"ds-nav-links\" aria-label=\"Primary\"><a href=\"/programmes\">Programmes</a><a href=\"/founder\">Founder</a><a href=\"/get-involved\">Get involved</a><a class=\"ds-nav-lang\" href=\"/fr\">FR</a></nav></header>",
+      "css": ".ds-nav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 64px; padding: 0 40px; background: rgba(246, 241, 231, 0.9); backdrop-filter: blur(2px); border-bottom: 1px solid var(--color-rule, #d3cabb); } .ds-nav-mark { font-family: \"Bodoni Moda\", \"Didot\", \"Bodoni MT\", \"Times New Roman\", serif; font-size: 1.2rem; font-weight: 400; letter-spacing: -0.01em; color: var(--color-ink, #1c1a17); text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 32px; } .ds-nav-links a { font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.86rem; letter-spacing: 0.06em; color: var(--color-ink, #1c1a17); text-decoration: none; transition: color 200ms; } .ds-nav-links a:hover { color: var(--color-ink, #1c1a17); } .ds-nav-links .ds-nav-lang { color: var(--color-grey, #67635c); } .ds-nav-links .ds-nav-lang:hover { color: var(--color-ink, #1c1a17); } .ds-nav a:focus-visible { outline: 2px solid var(--color-live, #a32127); outline-offset: 3px; }"
+    },
+    {
+      "name": "Photogravure Plate",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature image unit awaiting the foundation's own photography: graded grey field, press grain, ranked caption bar at the foot, and the one scroll-driven reveal.",
+      "html": "<figure class=\"ds-plate\"><figcaption class=\"ds-plate-caption\">PLATE — THE REHABILITATION CENTRE. PHOTOGRAPH TO COME.</figcaption></figure>",
+      "css": ".ds-plate { position: relative; display: flex; flex-direction: column; justify-content: flex-end; margin: 0; min-height: 46vh; overflow: hidden; background-color: #b8b2a6; background-image: radial-gradient(120% 90% at 22% 18%, rgba(246, 241, 231, 0.55) 0%, rgba(246, 241, 231, 0) 55%), radial-gradient(90% 80% at 82% 88%, rgba(28, 26, 23, 0.42) 0%, rgba(28, 26, 23, 0) 60%), linear-gradient(178deg, #a9a396 0%, #8f8b83 46%, #6f6a61 100%); } .ds-plate::after { content: \"\"; position: absolute; inset: 0; pointer-events: none; opacity: 0.5; mix-blend-mode: multiply; background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23g)' opacity='0.42'/></svg>\"); } .ds-plate-caption { position: relative; z-index: 10; padding: 12px 20px; font-family: \"Jost\", \"Futura\", \"Century Gothic\", system-ui, sans-serif; font-size: 0.72rem; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-paper, #f6f1e7); background: rgba(28, 26, 23, 0.6); border-top: 1px solid rgba(246, 241, 231, 0.4); } @keyframes ds-spread-in { from { opacity: 0.35; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } } @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ds-plate { animation: ds-spread-in both cubic-bezier(0.16, 1, 0.3, 1); animation-timeline: view(); animation-range: entry 4% cover 26%; } } }"
+    },
+    {
+      "name": "Gutter Seam",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The 1px seam between the two pages of a spread; fades out at both ends, hidden below the md breakpoint.",
+      "html": "<div class=\"ds-gutter\" aria-hidden=\"true\"></div>",
+      "css": ".ds-gutter { width: 1px; align-self: stretch; flex-shrink: 0; background: linear-gradient(to bottom, rgba(211, 202, 187, 0) 0%, var(--color-rule, #d3cabb) 12%, var(--color-rule, #d3cabb) 88%, rgba(211, 202, 187, 0) 100%); } @media (max-width: 767px) { .ds-gutter { display: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Brodovitch Spread",
+    "overview": "Bridge of Hope is a two-page editorial spread, not a landing page. The world is Alexey Brodovitch's Harper's Bazaar: warm white paper under charcoal photogravure ink, full-bleed plates that run to the seam, and exactly one live element in lipstick red. Every section is a pose on the left page answered by evidence on the right, with a single hairline gutter holding the beat between them. The claim/evidence turn — not a card grid — is the system's core unit; a new screen is built by composing spreads, not by stacking components.\n\nDensity is sparse and asymmetric. Text is ragged-right, set in narrow measures around plates and rules; whitespace is the paper itself. The structural vocabulary is deliberately starved: hairline rules, 1px grid seams, ranked captions, and the didone at display size. No cards with fills or shadows, no rounded corners, no icon tiles, no second accent color. Depth comes from tonal banding of the paper and the photographic gradient inside a plate.\n\nImagery is the photogravure plate: a graded grey field with press grain and a ranked caption naming the photograph that belongs there, until the foundation supplies its own. This is product truth — no stock photograph of strangers stands in for the foundation's own people. Motion is one authored moment: plates rise into their frames as the spread turns, scroll-keyed and fully disabled under reduced motion; content is never gated behind animation. WCAG 2.2 AA is a brand requirement and constrains the palette outright.",
+    "keyCharacteristics": [
+      "The spread: two equal pages split by a 1px gutter seam; claim left, evidence right",
+      "Six-color palette — warm paper ground, ink text, and a single live red reserved for one action or one urgent figure per view",
+      "Bodoni Moda at display sizes only; Jost for every word that is read, every caption and every control",
+      "Zero radius, zero shadow; structure drawn with hairlines and 1px grid seams",
+      "Every figure carries a provenance line; every plate carries a ranked caption, in AA-tested grey",
+      "Plates are the only animated element; everything else is still"
+    ],
+    "rules": [
+      { "name": "The One Red Rule", "body": "Live red appears on at most one action or one urgent figure per view. Its rarity is the point: the eye that finds the red has found the thing to do. Focus rings and form errors are permitted in red because they, too, are the live element of the moment.", "section": "colors" },
+      { "name": "The Didone-at-Display Rule", "body": "Bodoni Moda is used only at headline scale and above — h1s, section claims, figures, the wordmark, pull quotes. Every word meant to be read is Jost. A paragraph never sets in the didone.", "section": "typography" },
+      { "name": "The Ranked Caption Rule", "body": "Anything that would need an eyebrow elsewhere — a plate, a figure, a column, a form field — gets a ranked caption line instead: uppercase, tracked 0.14em, small, in Grey, with its numeral zero-padded (01, 02). Captions annotate; they never announce above a heading as a kicker.", "section": "typography" },
+      { "name": "The Gutter Rule", "body": "On desktop every claim is posed on the left page and its evidence answers on the right, across the 1px seam; body text never crosses the gutter and the seam never renders as a line between stacked mobile pages.", "section": "layout" },
+      { "name": "The Flat Page Rule", "body": "Surfaces are flat at rest and flat under interaction. Hover changes color or opacity (200ms), never elevation. If a future component needs a shadow to be legible, the component is wrong, not the system.", "section": "elevation" },
+      { "name": "The Hairline Rule", "body": "Structure is drawn, never boxed: sections, nav, footer, list rows and menu items are separated by 1px rules; dense grids divide with 1px gaps over the Rule color. A container never gains a stroke, fill, or radius to look like a card.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep Live Red to one action or one urgent figure per view; focus rings and errors may also carry it.",
+      "Do separate sections with a single top hairline and dense grids with 1px gaps over the Rule color — never with boxes.",
+      "Do cap every measure: display 12–20ch, body 54–62ch, lead 58ch, provenance 52ch, plate captions 70ch.",
+      "Do set the didone only at display scale and Jost for everything read; keep body line-height near 1.75 and display leading at 1.02 with -0.02em tracking.",
+      "Do give every figure a provenance line and every plate a ranked caption in Grey — the AA value (5.31:1) is the floor for caption text.",
+      "Do signal section change by stepping the ground to Paper Deep, and interactive state by color/opacity over 200ms.",
+      "Do keep content fully visible without animation: reveal effects only behind @supports + reduced-motion guards, and keep the skip link and 2px red focus ring working everywhere."
+    ],
+    "donts": [
+      "Don't introduce a second accent color, a gradient brand fill, or any red beyond the One Red Rule.",
+      "Don't add rounded corners, box-shadows, elevation hovers, or card containers with fills and strokes — this world has none.",
+      "Don't add an icon library, icon tiles, or emoji; directional and menu affordances are text and hairlines.",
+      "Don't set running text, captions, or controls in the didone, and don't lighten Grey below the AA-tested value to make a layout quieter.",
+      "Don't fill a plate with stock photography of strangers — plates stay plates until the foundation's own photography arrives.",
+      "Don't let copy cross the gutter, and don't render the seam as a divider on stacked mobile layouts."
+    ]
+  }
+}

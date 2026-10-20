@@ -1,0 +1,21 @@
+# Dependencies
+site/node_modules/
+
+# Next.js build output
+site/.next/
+site/out/
+*.tsbuildinfo
+
+# Secrets — local env only, .env.example carries the shape
+.env
+.env.local
+site/.env
+site/.env.local
+
+# Impeccable review captures (large, regenerable)
+.impeccable/review/
+
+# Misc
+.DS_Store
+Thumbs.db
+npm-debug.log*

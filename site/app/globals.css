@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  /* The Brodovitch world: warm paper, photogravure ink, one live red. */
+  --color-paper: #f6f1e7;
+  --color-paper-deep: #efe8da;
+  --color-ink: #1c1a17;
+  --color-grey: #67635c; /* text grey: 5.3:1 on paper, 4.9:1 on paper-deep — AA for captions and provenance */
+  --color-rule: #d3cabb;
+  --color-live: #a32127; /* 6.65:1 on paper — the one action and the one urgent figure */
+
+  --font-display: var(--font-bodoni), "Didot", "Bodoni MT", "Times New Roman", serif;
+  --font-text: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Display type is a didone: hairline contrast, tight leading, tightened tracking. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-optical-sizing: auto;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+
+  /* Captions are small ranked lines under every plate. */
+  .caption {
+    font-family: var(--font-text);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-grey);
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-live);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.75rem 1.25rem;
+    z-index: 100;
+  }
+
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Photogravure plate — the placeholder until real photography arrives.
+ * A graded grey field with press grain, framed by nothing but the gutter.
+ */
+.plate {
+  background-color: #b8b2a6;
+  background-image:
+    radial-gradient(120% 90% at 22% 18%, rgba(246, 241, 231, 0.55) 0%, rgba(246, 241, 231, 0) 55%),
+    radial-gradient(90% 80% at 82% 88%, rgba(28, 26, 23, 0.42) 0%, rgba(28, 26, 23, 0) 60%),
+    linear-gradient(178deg, #a9a396 0%, #8f8b83 46%, #6f6a61 100%);
+}
+
+.plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23g)' opacity='0.42'/></svg>");
+}
+
+/* The gutter: the seam the whole page turns on. */
+.gutter-rule {
+  background: linear-gradient(
+    to bottom,
+    rgba(211, 202, 187, 0) 0%,
+    var(--color-rule) 12%,
+    var(--color-rule) 88%,
+    rgba(211, 202, 187, 0) 100%
+  );
+}
+
+/*
+ * The authored moment: the spread turns as a plate rises into its frame and
+ * settles — an exponential ease-out keyed to the scroll, never a gate on
+ * content. Elements are fully visible by default: without scroll-driven
+ * animation support, or under prefers-reduced-motion, nothing animates.
+ */
+@keyframes spread-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: spread-in both cubic-bezier(0.16, 1, 0.3, 1);
+      animation-timeline: view();
+      animation-range: entry 4% cover 26%;
+    }
+  }
+}

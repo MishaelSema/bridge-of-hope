@@ -1,0 +1,147 @@
+{
+  "title": "Choose the visual world",
+  "question": "Bridge of Hope Foundation — keep the dealt direction, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Cooperative Ledger",
+      "kicker": "THE ROLL",
+      "lineage": "cooperative account books, carbon triplicate forms, rubber-stamped receipts",
+      "thesis": "The site is the foundation's books: every programme posted as a dated, numbered, stamped entry, impact read down the columns, and the funding ask ruled across the foot as the total.",
+      "palette": ["#132430", "#eef0e9", "#8fa8b8", "#b3372a"],
+      "materials": ["ruled ledger paper", "carbon-copy forms", "rubber-stamp ink", "perforated stubs"],
+      "viewport": "A two-page ledger spread across the full viewport — programmes posted down the left, a stamped entry at the right, and one total row ruled across the foot carrying the 600 million XAF ask.",
+      "risk": "Reads as dry bureaucracy if the stamp, rules and serial numbers are timid — paperwork only becomes proof when it is committed.",
+      "raised": [
+        { "from": "the vinyl wrap", "raise": "Partner and ACE-sibling logos are ranked as one deliberate sponsor strip along a single seam, never a scattered logo cloud." },
+        { "from": "the memory quilt", "raise": "Every figure wears its own stitched provenance label — source, date, and whether it is a target or a recorded actual." },
+        { "from": "the glaze river", "raise": "Rehabilitation to skills to markets to dignity runs as one continuous downward flow through the page, not four separate cards." },
+        { "from": "the VU bridge", "raise": "Instrument-row restraint: one row of identical entries read by sweeping, and red used exactly once — on the funding gap." }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "masthead + account tabs", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "dated entries — programmes posted", "x": 0, "y": 1, "w": 7, "h": 6 },
+          { "label": "carbon stub — get involved", "x": 7, "y": 1, "w": 5, "h": 3 },
+          { "label": "stamped entry — verified record", "x": 7, "y": 4, "w": 5, "h": 3, "accent": true },
+          { "label": "total row — the ask, ruled across the foot", "x": 0, "y": 7, "w": 12, "h": 2, "accent": true },
+          { "label": "ledger footer", "x": 0, "y": 9, "w": 12, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "The Joined Strip",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Cameroonian Ndop narrow-loom cloth — strips woven alone, then sewn edge to edge",
+      "thesis": "Each programme is woven as its own strip and joined edge to edge into one cloth; the site is the joining, and every seam stays visible.",
+      "palette": ["#101f38", "#f2ede2", "#1e5aa8", "#c2402b"],
+      "materials": ["indigo resist cloth", "narrow woven strips", "visible seams"],
+      "viewport": "Four vertical strips fill the first viewport — rehabilitation, skills, advocacy, livelihood — meeting under one bright seam that carries the ask.",
+      "risk": "The expected move for a Cameroonian NGO, and it fails the moment the cloth becomes a background pattern instead of the layout itself.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "nav set into the selvedge", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "strip 1 — rehabilitation", "x": 0, "y": 1, "w": 3, "h": 6 },
+          { "label": "strip 2 — skills", "x": 3, "y": 1, "w": 3, "h": 6 },
+          { "label": "strip 3 — advocacy", "x": 6, "y": 1, "w": 3, "h": 6 },
+          { "label": "strip 4 — livelihood", "x": 9, "y": 1, "w": 3, "h": 6, "accent": true },
+          { "label": "the seam — one cloth, the ask", "x": 0, "y": 7, "w": 12, "h": 2, "accent": true },
+          { "label": "hem", "x": 0, "y": 9, "w": 12, "h": 1 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-bazaar",
+      "label": "The Brodovitch Spread",
+      "verdict": "competitive",
+      "lineage": "Harper's Bazaar under Brodovitch — didot hairlines choreographed across a two-page gutter",
+      "thesis": "Each claim poses on the left page and its evidence answers on the right, the gutter holding the beat like a breath.",
+      "palette": ["#f6f1e7", "#1c1a17", "#8f8b83", "#a32127"],
+      "materials": ["warm white paper", "photogravure gray", "didot ink"],
+      "viewport": "A photograph bleeding to the gutter on the left, a didot headline curving down the right, one lipstick-red live element.",
+      "case": "Holds audience identification — international donors read photo-essay annual reports every day. Loses product clarity — the gutter choreography serves the story, not the Francophone family hunting for a service or the action they came to take.",
+      "risk": "Reads as fashion editorial when the register outranks the offer.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-brodovitch-bazaar-spread-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/brand-identity-canon-brodovitch-bazaar-spread.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "The Napkin Zine",
+      "verdict": "competitive",
+      "lineage": "hand-drawn technical zines — marker lettering, doodle arrows, mascots",
+      "thesis": "The model is taught the way a friend sketches it on a napkin: how rehabilitation becomes income, drawn panel by panel.",
+      "palette": ["#f7f1de", "#141414", "#ffd23f", "#38bfa7"],
+      "materials": ["marker ink", "highlighter swipe", "cream paper"],
+      "viewport": "A hand-lettered headline above one doodled pathway diagram, arrows looping from intake to income, a highlighter swipe on the line that matters.",
+      "case": "Holds product clarity — the doodle explains the four-pillar pathway better than any paragraph. Loses audience identification — marker-and-mascot playfulness undercuts the register a one-million-dollar institutional donor reads.",
+      "risk": "Reads as a school newsletter if the drawing is not drafted with real precision.",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer.webp"
+    },
+    {
+      "id": "challenger-itasha",
+      "label": "The Vinyl Wrap",
+      "verdict": "declined",
+      "lineage": "itasha vinyl wraps across car body panels",
+      "thesis": "Programme art scaled so large it breaks across panels, partners ranged as sponsor strips along the sill.",
+      "palette": ["#111111", "#ff5a8a", "#ffd400"],
+      "materials": ["printed vinyl gloss", "sponsor decals"],
+      "viewport": "Art breaking across a door seam with a ranked partner strip along the sill.",
+      "case": "Fuses poorly: donors and families do not identify with pop-culture car culture.",
+      "kept": "The sill — partners ranked as one deliberate strip along a single seam, never a logo cloud."
+    },
+    {
+      "id": "challenger-quilt",
+      "label": "The Memory Quilt",
+      "verdict": "declined",
+      "lineage": "hand-pieced quilts of worn garments and handwritten cloth",
+      "thesis": "Each programme pieced from worn cloth with a label naming its body, date and domestic history.",
+      "palette": ["#3b4a6b", "#efe7d8", "#b3372a"],
+      "materials": ["faded chambray", "bright topstitch", "cloth labels"],
+      "viewport": "Unequal patches under one line of bright new stitching.",
+      "case": "Fuses poorly: quilting is a Western domestic tradition; the institutional record is the artifact this audience trusts.",
+      "kept": "Every patch carries a body, a date and a provenance caption stitched to it — so every figure on the site wears its source."
+    },
+    {
+      "id": "challenger-kiln",
+      "label": "The Glaze River",
+      "verdict": "declined",
+      "lineage": "a kiln shelf beneath heavily glazed cups",
+      "thesis": "Programmes flow down the page like molten glaze — pooling, arresting, and sometimes fusing into independence.",
+      "palette": ["#efeae1", "#1c4fa1", "#0f1720"],
+      "materials": ["chalk kiln shelf", "molten glaze", "glassy sapphire"],
+      "viewport": "Cobalt running to the foot of a cup and freezing a millimetre above the shelf.",
+      "case": "Fuses poorly: ceramics is a connoisseur's world; neither donor nor family identifies with it.",
+      "kept": "One continuous flow as the page's spine — rehabilitation to skills to markets to dignity is a single downward path, not four cards."
+    },
+    {
+      "id": "challenger-vu",
+      "label": "The VU Bridge",
+      "verdict": "declined",
+      "lineage": "a row of ballistic VU meters across a recording desk",
+      "thesis": "Impact read as one row of identical needles, all leaning together on the same downbeat.",
+      "palette": ["#f3ecd9", "#181818", "#c2361f"],
+      "materials": ["ivory meter faces", "black needles", "glass"],
+      "viewport": "A row of identical meters swept left to right, red only past zero.",
+      "case": "Fuses poorly: analog gear belongs to another audience, and needles would invent measurements the foundation does not yet have.",
+      "kept": "Instrument-row restraint — one row of identical entries read by sweeping, and red used exactly once, on the funding gap."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "steer": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What every NGO site ships: a hopeful hero photograph, three equal programme cards, a blue Donate button.",
+    "palette": ["#f8fafc", "#0f172a", "#0284c7"],
+    "materials": ["clean grid", "stock photography"],
+    "viewport": "The arrangement a visitor expects, executed at full craft.",
+    "risk": "Indistinguishable from every other NGO site, by design."
+  },
+  "buildPath": { "value": "code", "toggle": false }
+}
