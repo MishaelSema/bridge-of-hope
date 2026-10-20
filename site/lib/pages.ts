@@ -130,11 +130,13 @@ export const pages = {
           name: "ACE Global Nexus",
           role: "The global business connector",
           body: "An international business and market-entry platform helping African businesses, investors, governments and institutions navigate markets, build partnerships and convert relationships into viable projects.",
+          href: "https://aceglobalnexus.com",
         },
         {
           name: "ACE-AGRO Farms",
           role: "Land into enterprise",
           body: "The agricultural investment arm, at Ekombitié: productive land, sustainable production, value addition and market access — and a demonstration platform for the foundation's own agriculture training.",
+          href: "https://aceagrofarms.com",
         },
         {
           name: "Bridge of Hope Foundation",
@@ -325,11 +327,13 @@ export const pages = {
           name: "ACE Global Nexus",
           role: "Le connecteur mondial des affaires",
           body: "Une plateforme internationale de conseil et d'entrée sur les marchés, aidant les entreprises, investisseurs, gouvernements et institutions africains à naviguer les marchés, bâtir des partenariats et transformer les relations en projets viables.",
+          href: "https://aceglobalnexus.com",
         },
         {
           name: "ACE-AGRO Farms",
           role: "De la terre à l'entreprise",
           body: "Le volet d'investissement agricole, à Ekombitié : terres productives, production durable, transformation et accès aux marchés — et une plateforme de démonstration pour la formation agricole de la fondation.",
+          href: "https://aceagrofarms.com",
         },
         {
           name: "Bridge of Hope Foundation",

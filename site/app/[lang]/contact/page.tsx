@@ -33,7 +33,7 @@ export default async function ContactPage({
 
           <div aria-hidden className="gutter-rule hidden w-px md:block" />
 
-          <div className="md:pl-14">
+          <div className="flex flex-col md:pl-14">
             <ul>
               <li className="border-b border-rule pb-6">
                 <p className="caption">{locale === "en" ? "Telephone" : "Téléphone"}</p>

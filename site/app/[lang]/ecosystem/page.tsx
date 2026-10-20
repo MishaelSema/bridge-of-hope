@@ -29,6 +29,18 @@ export default async function EcosystemPage({
                   {item.name}
                 </h2>
                 <p className="mt-5 max-w-[46ch] text-[0.98rem] leading-[1.72]">{item.body}</p>
+                {"href" in item && item.href ? (
+                  <p className="mt-6">
+                    <a
+                      href={item.href}
+                      className="text-[0.95rem] tracking-[0.04em] transition-opacity duration-200 hover:opacity-70"
+                    >
+                      {locale === "en" ? "Visit " : "Visiter "}
+                      {item.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+                      <span aria-hidden className="ml-3 border-b border-ink/40 pb-[2px]">→</span>
+                    </a>
+                  </p>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -57,7 +69,7 @@ export default async function EcosystemPage({
             </Provenance>
           </div>
           <div aria-hidden className="gutter-rule hidden w-px md:block" />
-          <div className="md:pl-14">
+          <div className="flex flex-col md:pl-14">
             <Plate
               caption={
                 locale === "en"

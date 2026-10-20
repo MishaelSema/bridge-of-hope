@@ -18,7 +18,7 @@ export function Plate({
 }) {
   return (
     <figure
-      className={`plate reveal relative m-0 flex min-h-[46vh] flex-col justify-end overflow-hidden md:min-h-full ${className}`}
+      className={`plate reveal relative m-0 flex min-h-[46vh] grow flex-col justify-end overflow-hidden ${className}`}
       style={style}
     >
       <figcaption className="caption relative z-10 border-t border-paper/40 bg-ink/60 px-5 py-3 text-paper md:px-8">
