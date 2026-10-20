@@ -19,3 +19,8 @@ site/.env.local
 .DS_Store
 Thumbs.db
 npm-debug.log*
+
+# Vercel
+.vercel/
+.env*
+!site/.env.example
