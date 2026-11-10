@@ -72,7 +72,7 @@ export default async function AboutPage({
       {/* Values */}
       <section className="bg-ink py-16 text-paper md:py-24">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16">
+          <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:items-start lg:gap-14">
             <div>
               <h2 className="display max-w-[14ch] text-[clamp(1.7rem,4.6vw,3rem)] text-paper">
                 {p.valuesHeading}
@@ -80,6 +80,22 @@ export default async function AboutPage({
               <p className="mt-6 max-w-[48ch] text-[1rem] leading-[1.72] text-paper/75">
                 {p.valuesLead}
               </p>
+
+              <ul className="mt-10 border-t border-white/12">
+                {p.values.map((value, index) => (
+                  <li
+                    key={value}
+                    className="flex items-baseline gap-5 border-b border-white/12 py-4"
+                  >
+                    <span className="label text-mint">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="display text-[1.2rem] tracking-[-0.02em] text-paper md:text-[1.35rem]">
+                      {value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <Figure
@@ -91,24 +107,12 @@ export default async function AboutPage({
                   : "Bridge of Hope Cameroon Association, lors d'une rencontre avec des partenaires."
               }
               credit={photo("associationBanner").credit}
-              frameClassName="aspect-[4/5]"
-              sizes="(max-width: 1024px) 100vw, 35vw"
+              className="lg:order-first"
+              frameClassName="aspect-[4/5] max-h-[420px]"
+              sizes="(max-width: 1024px) 100vw, 28vw"
               dark
             />
           </div>
-
-          <ul className="mt-12 grid grid-cols-1 gap-px bg-white/12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
-            {p.values.map((value, index) => (
-              <li key={value} className="bg-ink px-6 py-8">
-                <span className="label text-mint">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="display mt-4 text-[1.25rem] tracking-[-0.02em] text-paper md:text-[1.4rem]">
-                  {value}
-                </p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
