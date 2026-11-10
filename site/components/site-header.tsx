@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 
 type NavItem = { href: string; label: string };
@@ -37,6 +37,8 @@ export function SiteHeader({
 }) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   const items: NavItem[] = [
     { href: `/${locale}`, label: nav.home },
@@ -66,20 +68,36 @@ export function SiteHeader({
   const isActive = (href: string) =>
     href === `/${locale}` ? pathname === href : pathname.startsWith(href);
 
-  // The panel owns the screen while it is open.
+  // The panel owns the screen while it is open, and hands focus back when
+  // it closes.
+  const close = useCallback(() => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }, []);
+
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") close();
     };
     window.addEventListener("keydown", onKey);
+    const focus = window.setTimeout(() => closeRef.current?.focus(), 120);
     return () => {
       document.body.style.overflow = previous;
       window.removeEventListener("keydown", onKey);
+      window.clearTimeout(focus);
     };
-  }, [open]);
+  }, [open, close]);
+
+  /** A row of the panel: it rises into place, one after another. */
+  const row = (index: number, extra = "") => ({
+    className: `transition-[opacity,transform] duration-[350ms] ease-out motion-reduce:transition-none motion-reduce:translate-y-0 ${
+      open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+    } ${extra}`,
+    style: { transitionDelay: open ? `${index * 40}ms` : "0ms" },
+  });
 
   return (
     <>
@@ -143,6 +161,7 @@ export function SiteHeader({
               </Link>
 
               <button
+                ref={triggerRef}
                 type="button"
                 onClick={() => setOpen(true)}
                 aria-expanded={open}
@@ -160,19 +179,26 @@ export function SiteHeader({
         </div>
       </header>
 
-      {/* The mobile panel: one screen, the whole site, and the ways in. */}
+      {/* The mobile panel: one screen, the whole site, and the ways in.
+          It eases in and out — a fade with a short rise, never a cut. */}
       <div
         id="site-menu"
-        hidden={!open}
-        className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink text-paper"
+        aria-hidden={!open}
+        inert={!open}
+        className={`fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink text-paper transition-[opacity,transform,visibility] duration-[400ms] ease-out motion-reduce:transition-none motion-reduce:translate-y-0 ${
+          open
+            ? "visible translate-y-0 opacity-100"
+            : "invisible pointer-events-none -translate-y-3 opacity-0"
+        }`}
       >
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-5">
+        <div {...row(0, "flex items-center justify-between border-b border-white/10 px-5 py-5")}>
           <span className="display text-[1.1rem]">
             Bridge of Hope<span className="text-mint">.</span>
           </span>
           <button
+            ref={closeRef}
             type="button"
-            onClick={() => setOpen(false)}
+            onClick={close}
             aria-label={nav.close}
             className="flex h-10 w-10 items-center justify-center text-paper transition-opacity duration-200 hover:opacity-70"
           >
@@ -185,7 +211,10 @@ export function SiteHeader({
 
         <ul className="flex flex-1 flex-col">
           {items.map((item, index) => (
-            <li key={item.href} className="border-b border-white/10">
+            <li
+              key={item.href}
+              {...row(index + 1, "border-b border-white/10")}
+            >
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -200,7 +229,7 @@ export function SiteHeader({
           ))}
         </ul>
 
-        <div className="space-y-5 px-5 py-8">
+        <div {...row(items.length + 1, "space-y-5 px-5 py-8")}>
           <Link
             href={`/${locale}/get-involved`}
             onClick={() => setOpen(false)}

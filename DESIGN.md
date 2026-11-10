@@ -203,7 +203,7 @@ Every corner is sharp. Buttons, cards, frames and panels are all radius 0. Struc
 A `figure` with a teal gradient ground; the image is desaturated and screened onto that ground, washed with a top-to-bottom gradient for legibility, and finished with press grain. On hover the duotone releases: the filter clears, the blend returns to normal, the opacity rises to full, and the image scales 4% over 900ms. Frames can be given `tone="colour"` to skip the treatment entirely.
 
 ### The Menu Panel
-A full-screen teal panel: the wordmark, eight numbered links in display type, the primary action, the contact details and the language switch. The button that opens it is two lines drawn in CSS (no glyph, no icon font). The panel locks the page behind it and closes on Escape.
+A full-screen teal panel: the wordmark, eight numbered links in display type, the primary action, the contact details and the language switch. The button that opens it is two lines drawn in CSS (no glyph, no icon font). The panel eases in over 400ms — a fade with a short rise — and its rows arrive one after another, 40ms apart; it eases back out the same way when dismissed. While closed it is `inert` and hidden from the tab order; while open it locks the page behind it, takes focus, closes on Escape, and hands focus back to the button that opened it.
 
 ### The Page Hero
 An inner page opens with a band of photography (`46vh` mobile, `64vh` from `md`), the page title set over it in paper, a mint rule above the title, and the lead beneath the band on white.
