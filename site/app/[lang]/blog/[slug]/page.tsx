@@ -103,6 +103,7 @@ export default async function BlogPostPage({
                 priority
                 sizes="100vw"
                 className="object-cover"
+                style={photo(post.image).position ? { objectPosition: photo(post.image).position } : undefined}
               />
             </div>
             <p className="mt-3 text-[0.7rem] tracking-[0.06em] text-slate">

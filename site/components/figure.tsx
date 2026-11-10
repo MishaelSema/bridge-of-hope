@@ -45,6 +45,7 @@ export function Figure({
           sizes={sizes}
           priority={priority}
           className="object-cover"
+          style={photo.position ? { objectPosition: photo.position } : undefined}
         />
         {overlay ? (
           <div className="absolute inset-x-0 bottom-0 z-[3] p-5 md:p-7">{overlay}</div>

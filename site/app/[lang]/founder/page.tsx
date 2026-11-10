@@ -77,7 +77,7 @@ export default async function FounderPage({
                 alt={locale === "fr" ? photo("founderLanyard").altFr : photo("founderLanyard").alt}
                 caption={p.caption}
                 credit={photo("founderLanyard").credit}
-                frameClassName="mt-10 aspect-[4/3]"
+                frameClassName="mt-10 aspect-[3/4] lg:aspect-[4/5]"
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
             </div>

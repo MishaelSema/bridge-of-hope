@@ -36,6 +36,12 @@ recognisable has given consent for the web, and confirm the captions name
 roles correctly — several of these people are partners or participants rather
 than beneficiaries, and the captions must not imply otherwise.
 
+**Orientation.** Seven of the archive photographs were stored sideways by the
+phones that took them — the rotation lived in the file's metadata rather than
+in its pixels. `site/scripts/rotate-archive-images.cjs` turns them from the
+originals; the published files carry no EXIF, so no location data leaves the
+phone. Re-run that script rather than editing the WebP by hand.
+
 ---
 
 ## Stock photography still in place

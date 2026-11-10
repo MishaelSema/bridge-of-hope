@@ -29,6 +29,7 @@ export function PageHero({
           priority
           sizes="100vw"
           className="object-cover"
+          style={photo.position ? { objectPosition: photo.position } : undefined}
         />
         <div className="absolute inset-0 z-[3] flex flex-col justify-end px-5 pb-7 md:px-10 md:pb-12">
           <span className="rule-mint" aria-hidden />

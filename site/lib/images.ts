@@ -16,6 +16,11 @@ export type Photo = {
   altFr: string;
   /** Printed under the photograph: author, licence, source. */
   credit: string;
+  /**
+   * Where the subject sits when the photograph is cropped. Portrait sources
+   * need an upward bias so that a wide band keeps the head, not the waist.
+   */
+  position?: string;
 };
 
 const photos = {
@@ -180,18 +185,21 @@ const photos = {
   },
   awardCertificate: {
     src: "/images/award-certificate.webp",
+    position: "center 30%",
     alt: "A woman in a black evening gown holds a certificate beside a seated participant who uses a white cane.",
     altFr: "Une femme en robe de soirée noire tient un certificat à côté d'un participant assis qui utilise une canne blanche.",
     credit: "Photograph: the foundation's own archive",
   },
   awardGroup: {
     src: "/images/award-group.webp",
+    position: "center 28%",
     alt: "Six people stand together holding certificates after an award ceremony; one of them uses a white cane.",
     altFr: "Six personnes se tiennent ensemble, certificats en main, après une cérémonie de remise de prix ; l'une d'elles utilise une canne blanche.",
     credit: "Photograph: the foundation's own archive",
   },
   awardSmile: {
     src: "/images/award-smile.webp",
+    position: "center 24%",
     alt: "A woman in a black gown smiles holding a certificate, with the award group behind her.",
     altFr: "Une femme en robe noire sourit en tenant un certificat, le groupe des lauréats derrière elle.",
     credit: "Photograph: the foundation's own archive",
@@ -210,12 +218,14 @@ const photos = {
   },
   expoScooter: {
     src: "/images/expo-scooter.webp",
+    position: "center 30%",
     alt: "A man in white traditional dress on a red mobility scooter at a trade-show booth, with people standing behind him.",
     altFr: "Un homme en tenue traditionnelle blanche sur un scooter de mobilité rouge devant un stand, entouré de personnes.",
     credit: "Photograph: the foundation's own archive",
   },
   founderCane: {
     src: "/images/founder-cane.webp",
+    position: "center 28%",
     alt: "A man in black traditional dress and a black hat, seated, with a white cane resting on the floor beside him.",
     altFr: "Un homme en tenue traditionnelle noire et chapeau noir, assis, une canne blanche posée à côté de lui.",
     credit: "Photograph: the foundation's own archive",

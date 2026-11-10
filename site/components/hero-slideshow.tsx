@@ -74,6 +74,7 @@ export function HeroSlideshow({
               }
               sizes="100vw"
               className="object-cover"
+              style={slide.position ? { objectPosition: slide.position } : undefined}
             />
           </div>
         ))}

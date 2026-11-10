@@ -74,6 +74,7 @@ export default async function BlogPage({
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover"
+                style={photo(lead.image).position ? { objectPosition: photo(lead.image).position } : undefined}
               />
             </div>
             <div>
