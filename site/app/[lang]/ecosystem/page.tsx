@@ -39,11 +39,11 @@ export default async function EcosystemPage({
   return (
     <>
       <PageHero
-        photo={photo("agroforest")}
-        alt={locale === "fr" ? photo("agroforest").altFr : photo("agroforest").alt}
+        photo={photo("eventNetworking")}
+        alt={locale === "fr" ? photo("eventNetworking").altFr : photo("eventNetworking").alt}
         title={p.title}
         lead={p.lead}
-        credit={photo("agroforest").credit}
+        credit={photo("eventNetworking").credit}
       />
 
       {/* The four pieces */}
@@ -114,6 +114,26 @@ export default async function EcosystemPage({
             frameClassName="aspect-[3/2]"
             sizes="(max-width: 1024px) 100vw, 45vw"
           />
+        </div>
+      </section>
+
+      {/* The wider stage — the founder's work beyond the foundation */}
+      <section className="bg-sand py-16 md:py-24">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-5 md:px-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
+          <Figure
+            photo={photo("expoSelfie")}
+            alt={locale === "fr" ? photo("expoSelfie").altFr : photo("expoSelfie").alt}
+            caption={p.stageCaption}
+            credit={photo("expoSelfie").credit}
+            frameClassName="aspect-[4/3]"
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
+          <div>
+            <h2 className="display max-w-[16ch] text-[clamp(1.7rem,4.6vw,3rem)]">
+              {p.stageHeading}
+            </h2>
+            <p className="mt-6 max-w-[54ch] text-[1rem] leading-[1.78]">{p.stageBody}</p>
+          </div>
         </div>
       </section>
     </>

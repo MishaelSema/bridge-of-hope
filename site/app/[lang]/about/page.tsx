@@ -39,11 +39,11 @@ export default async function AboutPage({
   return (
     <>
       <PageHero
-        photo={photo("marketBafia")}
-        alt={locale === "fr" ? photo("marketBafia").altFr : photo("marketBafia").alt}
+        photo={photo("meetingSpeaking")}
+        alt={locale === "fr" ? photo("meetingSpeaking").altFr : photo("meetingSpeaking").alt}
         title={p.title}
         lead={p.lead}
-        credit={photo("marketBafia").credit}
+        credit={photo("meetingSpeaking").credit}
       />
 
       {/* The problem */}
@@ -72,11 +72,29 @@ export default async function AboutPage({
       {/* Values */}
       <section className="bg-ink py-16 text-paper md:py-24">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-16">
-            <h2 className="display max-w-[14ch] text-[clamp(1.7rem,4.6vw,3rem)] text-paper">
-              {p.valuesHeading}
-            </h2>
-            <p className="max-w-[48ch] text-[1rem] leading-[1.72] text-paper/75">{p.valuesLead}</p>
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16">
+            <div>
+              <h2 className="display max-w-[14ch] text-[clamp(1.7rem,4.6vw,3rem)] text-paper">
+                {p.valuesHeading}
+              </h2>
+              <p className="mt-6 max-w-[48ch] text-[1rem] leading-[1.72] text-paper/75">
+                {p.valuesLead}
+              </p>
+            </div>
+
+            <Figure
+              photo={photo("associationBanner")}
+              alt={locale === "fr" ? photo("associationBanner").altFr : photo("associationBanner").alt}
+              caption={
+                locale === "en"
+                  ? "Bridge of Hope Cameroon Association, at a gathering with partners."
+                  : "Bridge of Hope Cameroon Association, lors d'une rencontre avec des partenaires."
+              }
+              credit={photo("associationBanner").credit}
+              frameClassName="aspect-[4/5]"
+              sizes="(max-width: 1024px) 100vw, 35vw"
+              dark
+            />
           </div>
 
           <ul className="mt-12 grid grid-cols-1 gap-px bg-white/12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">

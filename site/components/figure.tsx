@@ -18,6 +18,7 @@ export function Figure({
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
   tone = "duo",
+  dark = false,
   overlay,
 }: {
   photo: Photo;
@@ -29,6 +30,8 @@ export function Figure({
   sizes?: string;
   priority?: boolean;
   tone?: "duo" | "colour";
+  /** Caption and credit sit on a dark ground. */
+  dark?: boolean;
   /** Text pinned to the foot of the frame, over the wash. */
   overlay?: React.ReactNode;
 }) {
@@ -48,8 +51,12 @@ export function Figure({
         ) : null}
       </div>
       {caption || credit ? (
-        <figcaption className="mt-3 flex flex-col gap-1 text-[0.72rem] leading-[1.5] tracking-[0.06em] text-slate">
-          {caption ? <span className="text-ink">{caption}</span> : null}
+        <figcaption
+          className={`mt-3 flex flex-col gap-1 text-[0.72rem] leading-[1.5] tracking-[0.06em] ${
+            dark ? "text-paper/60" : "text-slate"
+          }`}
+        >
+          {caption ? <span className={dark ? "text-paper/90" : "text-ink"}>{caption}</span> : null}
           {credit ? <span>{credit}</span> : null}
         </figcaption>
       ) : null}

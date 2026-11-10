@@ -39,11 +39,11 @@ export default async function ImpactPage({
   return (
     <>
       <PageHero
-        photo={photo("youth")}
-        alt={locale === "fr" ? photo("youth").altFr : photo("youth").alt}
+        photo={photo("awardSmile")}
+        alt={locale === "fr" ? photo("awardSmile").altFr : photo("awardSmile").alt}
         title={p.title}
         lead={p.lead}
-        credit={photo("youth").credit}
+        credit={photo("awardSmile").credit}
       />
 
       {/* The honesty strip */}
@@ -75,6 +75,39 @@ export default async function ImpactPage({
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Recognition — moments from the foundation's own archive */}
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div>
+              <h2 className="display max-w-[16ch] text-[clamp(1.7rem,4.6vw,3rem)]">
+                {p.recognitionHeading}
+              </h2>
+              <p className="mt-6 max-w-[52ch] text-[1rem] leading-[1.75]">{p.recognitionBody}</p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <Figure
+                photo={photo("awardGroup")}
+                alt={locale === "fr" ? photo("awardGroup").altFr : photo("awardGroup").alt}
+                caption={p.recognitionCaptionOne}
+                credit={photo("awardGroup").credit}
+                frameClassName="aspect-[4/5]"
+                sizes="(max-width: 640px) 100vw, 25vw"
+              />
+              <Figure
+                photo={photo("advocacyHandover")}
+                alt={locale === "fr" ? photo("advocacyHandover").altFr : photo("advocacyHandover").alt}
+                caption={p.recognitionCaptionTwo}
+                credit={photo("advocacyHandover").credit}
+                frameClassName="aspect-[4/5] sm:mt-12"
+                sizes="(max-width: 640px) 100vw, 25vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

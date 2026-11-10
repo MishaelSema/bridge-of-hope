@@ -1,0 +1,3 @@
+# Raw photography archive — kept in git, never sent to the build.
+# The published WebP in site/public/images are all the site needs.
+site/content-images

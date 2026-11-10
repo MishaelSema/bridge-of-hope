@@ -41,11 +41,11 @@ export default async function GetInvolvedPage({
   return (
     <>
       <PageHero
-        photo={photo("studio")}
-        alt={locale === "fr" ? photo("studio").altFr : photo("studio").alt}
+        photo={photo("applause")}
+        alt={locale === "fr" ? photo("applause").altFr : photo("applause").alt}
         title={p.title}
         lead={p.lead}
-        credit={photo("studio").credit}
+        credit={photo("applause").credit}
       />
 
       {/* Three ways in */}

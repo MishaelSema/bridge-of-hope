@@ -39,11 +39,11 @@ export default async function FounderPage({
   return (
     <>
       <PageHero
-        photo={photo("cityNight")}
-        alt={locale === "fr" ? photo("cityNight").altFr : photo("cityNight").alt}
+        photo={photo("founderCane")}
+        alt={locale === "fr" ? photo("founderCane").altFr : photo("founderCane").alt}
         title={p.title}
         lead={`${p.name} — ${p.role}`}
-        credit={photo("cityNight").credit}
+        credit={photo("founderCane").credit}
       />
 
       <section className="bg-paper py-16 md:py-24">
@@ -73,10 +73,10 @@ export default async function FounderPage({
               </blockquote>
 
               <Figure
-                photo={photo("studio")}
-                alt={locale === "fr" ? photo("studio").altFr : photo("studio").alt}
+                photo={photo("founderLanyard")}
+                alt={locale === "fr" ? photo("founderLanyard").altFr : photo("founderLanyard").alt}
                 caption={p.caption}
-                credit={photo("studio").credit}
+                credit={photo("founderLanyard").credit}
                 frameClassName="mt-10 aspect-[4/3]"
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />

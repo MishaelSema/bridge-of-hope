@@ -1,9 +1,48 @@
 # Image credits
 
-Every photograph on the site is currently **licensed stock**, used as a
-placeholder until the foundation's own photography arrives. Each frame carries
-a credit line beneath it, and the licence requires that the credit stays with
-the image.
+## The foundation's own photographs
+
+Nineteen photographs from the foundation's archive are now published across the
+site. They are the foundation's own — no stock licence applies, and no credit
+to a third party is required. Each still carries a credit line beneath it
+reading *"Photograph: the foundation's own archive"*, so a reader can tell at a
+glance which pictures are archival and which are still standing in for the
+foundation's current work.
+
+| File | Shows | Published as |
+|---|---|---|
+| `event-group.webp` | Group photograph at a foundation gathering | Home hero, slide 1 |
+| `founder-cane.webp` | The founder seated, in traditional dress | Home hero, slide 2 · Founder page band |
+| `award-certificate.webp` | A certificate presented beside a participant with a white cane | Home hero, slide 3 · Journal |
+| `expo-power-africa.webp` | A group at a Power Africa booth | Home hero, slide 4 |
+| `crutches-man.webp` | A participant using crutches at an event | Home, card 1 |
+| `advocacy-handshake.webp` | A handshake with a community leader using crutches | Home, card 3 |
+| `founder-portrait.webp` | Studio portrait of the founder | Home, founder section |
+| `founder-lanyard.webp` | The founder at an international event | Founder page |
+| `meeting-speaking.webp` | A working discussion in a lounge | About page band |
+| `association-banner.webp` | The Bridge of Hope Cameroon Association banner | About page, values band |
+| `award-smile.webp` | An award ceremony | The Record page band |
+| `award-group.webp` | A group after an award ceremony | The Record page, recognition |
+| `advocacy-handover.webp` | A document presented to a community leader | The Record page, recognition |
+| `expo-selfie.webp` | The founder at an international trade show | The Ecosystem page |
+| `applause.webp` | Guests applauding at a gathering | Get involved page band |
+| `community-table.webp` | Guests in conversation at a community dinner | Reserved |
+| `crutches-phone.webp` | A participant using crutches | Reserved |
+| `expo-scooter.webp` | A participant on a mobility scooter at a trade show | Journal |
+| `event-networking.webp` | Guests in conversation at a reception | The Ecosystem page band |
+
+**Two checks before publication:** confirm that every person who is
+recognisable has given consent for the web, and confirm the captions name
+roles correctly — several of these people are partners or participants rather
+than beneficiaries, and the captions must not imply otherwise.
+
+---
+
+## Stock photography still in place
+
+The remaining photographs are **licensed stock**, used as placeholders for
+shots the foundation has not yet taken. Each frame carries a credit line
+beneath it, and the licence requires that the credit stays with the image.
 
 Files live in `site/public/images/` as pre-optimised WebP (max 1600px, quality
 78), served straight from the CDN — `next/image` is unoptimised, so no image

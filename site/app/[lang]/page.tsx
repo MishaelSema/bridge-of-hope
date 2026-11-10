@@ -15,7 +15,7 @@ export default async function HomePage({
   const t = getDict(locale);
   const h = t.home;
 
-  const doorPhotos = [photo("sport"), photo("tailor"), photo("market")];
+  const doorPhotos = [photo("crutchesMan"), photo("tailor"), photo("advocacyHandshake")];
 
   return (
     <>
@@ -178,10 +178,10 @@ export default async function HomePage({
           </div>
 
           <Figure
-            photo={photo("bridge")}
-            alt={locale === "fr" ? photo("bridge").altFr : photo("bridge").alt}
+            photo={photo("founderPortrait")}
+            alt={locale === "fr" ? photo("founderPortrait").altFr : photo("founderPortrait").alt}
             caption={h.founderCaption}
-            credit={photo("bridge").credit}
+            credit={photo("founderPortrait").credit}
             frameClassName="aspect-[4/5] lg:aspect-[3/4]"
             sizes="(max-width: 1024px) 100vw, 45vw"
           />

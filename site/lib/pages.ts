@@ -49,7 +49,7 @@ export const pages = {
       agnHeading: "Beyond the foundation",
       agn:
         "Christopher is also the founder and chief executive of ACE Global Nexus, an international business and investment advisory platform connecting African businesses and opportunities with global markets, investors, partners and institutions. That wider experience brings a global perspective to local development, and it is why Bridge of Hope is designed around connections rather than charity.",
-      caption: "Placeholder photography — the founder's own portrait and archive will follow.",
+      caption: "The founder at an international development event.",
     },
     programmes: {
       title: "Programmes",
@@ -109,6 +109,11 @@ export const pages = {
       banner:
         "No results are published yet. The foundation reports quarterly and annually to its funders and stakeholders.",
       imageCaption: "The planning documents behind every figure on this page.",
+      recognitionHeading: "Recognition, and the work behind it.",
+      recognitionBody:
+        "The foundation's earlier work has been recognised in the field, and it has sat down with institutions and community leaders to argue its case. These photographs come from the foundation's own archive: an award ceremony, and a document presented during a courtesy visit.",
+      recognitionCaptionOne: "After an award ceremony.",
+      recognitionCaptionTwo: "A document presented to a community leader.",
       figures: [
         { figure: "1,000", label: "persons with disabilities to be reached in the first cycle, youth and women prioritised", note: "Target — Concept Note" },
         { figure: "600m", label: "XAF required for initial setup, staffing, equipment and operations for the first two years (approximately one million US dollars)", note: "Estimate — Business Plan, December 2025" },
@@ -156,6 +161,10 @@ export const pages = {
       ],
       formula: "Capital + Land + People + Markets + Knowledge + Technology + Partnerships + Impact",
       imageCaption: "Ekombitié — land, workshops and training ground.",
+      stageHeading: "The work does not stop at the foundation.",
+      stageBody:
+        "The founder's wider practice takes the same questions to international development forums: what partnership actually means between institutions and communities, what disability inclusion looks like in an investment relationship, and how a foundation is judged. The foundation inherits that network, and the credibility that comes with it.",
+      stageCaption: "At an international development event.",
       linkHeading: "Where the connection is practical",
       link: "Where appropriate, ACE Global Nexus and ACE-AGRO Farms create routes for trained beneficiaries: internships, agricultural projects, entrepreneurship and supply chains. Social impact should not end with assistance.",
     },
@@ -254,7 +263,7 @@ export const pages = {
       agnHeading: "Au-delà de la fondation",
       agn:
         "Christopher est également fondateur et dirigeant d'ACE Global Nexus, une plateforme internationale de conseil et d'investissement qui relie les entreprises et les opportunités africaines aux marchés, investisseurs, partenaires et institutions mondiaux. Cette expérience plus large apporte une perspective mondiale au développement local, et c'est pourquoi Bridge of Hope est conçu autour des relations plutôt que de la charité.",
-      caption: "Photographies de substitution — le portrait et les archives du fondateur suivront.",
+      caption: "Le fondateur lors d'un événement de développement international.",
     },
     programmes: {
       title: "Programmes",
@@ -314,6 +323,11 @@ export const pages = {
       banner:
         "Aucun résultat n'est encore publié. La fondation rend compte chaque trimestre et chaque année à ses financeurs et parties prenantes.",
       imageCaption: "Les documents de planification derrière chaque chiffre de cette page.",
+      recognitionHeading: "La reconnaissance, et le travail qui la porte.",
+      recognitionBody:
+        "Les premiers travaux de la fondation ont été reconnus sur le terrain, et elle s'est assise avec des institutions et des chefs de communauté pour défendre sa cause. Ces photographies viennent de l'archive de la fondation : une cérémonie de remise de prix, et un document remis lors d'une visite de courtoisie.",
+      recognitionCaptionOne: "Après une cérémonie de remise de prix.",
+      recognitionCaptionTwo: "Un document remis à un chef de communauté.",
       figures: [
         { figure: "1 000", label: "personnes en situation de handicap à atteindre au premier cycle, jeunes et femmes en priorité", note: "Objectif — Note de concept" },
         { figure: "600 M", label: "FCFA requis pour l'installation initiale, le personnel, les équipements et le fonctionnement durant les deux premières années (environ un million de dollars US)", note: "Estimation — Plan d'affaires, décembre 2025" },
@@ -361,6 +375,10 @@ export const pages = {
       ],
       formula: "Capital + Terre + Personnes + Marchés + Savoir + Technologie + Partenariats + Impact",
       imageCaption: "Ekombitié — terre, ateliers et terrain de formation.",
+      stageHeading: "Le travail ne s'arrête pas à la fondation.",
+      stageBody:
+        "La pratique plus large du fondateur porte les mêmes questions sur les scènes internationales du développement : ce que le partenariat signifie réellement entre institutions et communautés, à quoi ressemble l'inclusion du handicap dans une relation d'investissement, et comment une fondation est jugée. La fondation hérite de ce réseau, et de la crédibilité qui l'accompagne.",
+      stageCaption: "Lors d'un événement de développement international.",
       linkHeading: "Là où la connexion devient concrète",
       link: "Le cas échéant, ACE Global Nexus et ACE-AGRO Farms ouvrent des débouchés aux bénéficiaires formés : stages, projets agricoles, entrepreneuriat et chaînes d'approvisionnement. L'impact social ne doit pas s'arrêter à l'assistance.",
     },

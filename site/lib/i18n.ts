@@ -35,7 +35,7 @@ const en = {
       "Bridge of Hope Foundation connects persons with disabilities in Cameroon to rehabilitation, skills and markets — so that care becomes a livelihood, and dependence becomes enterprise.",
     action: "Support the work",
     secondary: "See the programmes",
-    caption: "Placeholder photography — the foundation's own images to follow.",
+    caption: "Photographs from the foundation's own archive.",
     slide: "Slide",
     previousSlide: "Previous slide",
     nextSlide: "Next slide",
@@ -95,7 +95,7 @@ const en = {
     founderBody:
       "Christopher A. Ekom spent more than twenty-two years in commercial diplomacy at the United States Embassy in Yaoundé, strengthening trade and investment between Cameroon and the United States. He founded Bridge of Hope on a belief formed there: that people prosper when knowledge, resources, markets and potential are connected.",
     founderLink: "Read the full profile",
-    founderCaption: "The bridge over the Sanaga — the name, and the idea.",
+    founderCaption: "Christopher A. Ekom, founder of the foundation.",
     recordHeading: "The record, kept plainly.",
     recordRows: [
       {
@@ -173,7 +173,7 @@ const fr: typeof en = {
       "Bridge of Hope Foundation relie les personnes en situation de handicap au Cameroun à la réhabilitation, aux compétences et aux marchés — pour que le soin devienne un revenu, et la dépendance une entreprise.",
     action: "Soutenir l'action",
     secondary: "Voir les programmes",
-    caption: "Photographies de substitution — les images de la fondation suivront.",
+    caption: "Photographies issues de l'archive de la fondation.",
     slide: "Diapositive",
     previousSlide: "Diapositive précédente",
     nextSlide: "Diapositive suivante",
@@ -233,7 +233,7 @@ const fr: typeof en = {
     founderBody:
       "Christopher A. Ekom a passé plus de vingt-deux ans dans la diplomatie commerciale à l'Ambassade des États-Unis à Yaoundé, où il a renforcé les échanges commerciaux et investissements entre le Cameroun et les États-Unis. Il a fondé Bridge of Hope sur une conviction née là-bas : les gens prospèrent lorsque les connaissances, les ressources, les marchés et le potentiel sont reliés.",
     founderLink: "Lire le profil complet",
-    founderCaption: "Le pont sur la Sanaga — le nom, et l'idée.",
+    founderCaption: "Christopher A. Ekom, fondateur de la fondation.",
     recordHeading: "Les chiffres, sans ornement.",
     recordRows: [
       {

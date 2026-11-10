@@ -14,7 +14,16 @@ export type Post = {
   title: { en: string; fr: string };
   excerpt: { en: string; fr: string };
   minutes: number;
-  image: "sport" | "tailor" | "farm" | "business" | "market";
+  image:
+    | "sport"
+    | "tailor"
+    | "farm"
+    | "business"
+    | "market"
+    | "awardCertificate"
+    | "expoScooter"
+    | "crutchesPhone"
+    | "communityTable";
   sections: {
     heading?: { en: string; fr: string };
     paragraphs: { en: string[]; fr: string[] };
@@ -35,7 +44,7 @@ export const posts: Post[] = [
       fr: "La thérapie répare un corps. Seul le travail répare une vie. Ce que disent les preuves.",
     },
     minutes: 6,
-    image: "sport",
+    image: "awardCertificate",
     sections: [
       {
         paragraphs: {
@@ -251,7 +260,7 @@ export const posts: Post[] = [
       fr: "Cinq à six pour cent de la population. Des services concentrés en ville, et qui aboutissent rarement à un revenu.",
     },
     minutes: 5,
-    image: "market",
+    image: "expoScooter",
     sections: [
       {
         paragraphs: {
