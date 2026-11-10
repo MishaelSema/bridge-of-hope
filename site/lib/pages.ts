@@ -14,7 +14,10 @@ export const pages = {
       problemHeading: "The problem it was founded to solve",
       problem:
         "Persons with disabilities in Cameroon face significant barriers to healthcare, education and employment. In rural and underserved communities, rehabilitation is extremely limited, which increases dependency and social exclusion. Vocational training and economic opportunity are rarer still. Stigma and low public awareness keep people out of family and community life. The foundation was created to answer that with an integrated intervention.",
+      imageCaption: "The rehabilitation centre will stand in the centre of Yaoundé.",
       valuesHeading: "Core values",
+      valuesLead:
+        "Five commitments that decide what the foundation does, and what it refuses.",
       values: ["Inclusion", "Empowerment", "Accessibility", "Self-reliance", "Accountability"],
       sustainabilityHeading: "How it is meant to last",
       sustainability: [
@@ -46,12 +49,13 @@ export const pages = {
       agnHeading: "Beyond the foundation",
       agn:
         "Christopher is also the founder and chief executive of ACE Global Nexus, an international business and investment advisory platform connecting African businesses and opportunities with global markets, investors, partners and institutions. That wider experience brings a global perspective to local development, and it is why Bridge of Hope is designed around connections rather than charity.",
-      caption: "Portrait and archive photographs to come.",
+      caption: "Placeholder photography — the founder's own portrait and archive will follow.",
     },
     programmes: {
       title: "Programmes",
       lead: "Six programmes, run as one pathway. A beneficiary is assessed, given an individual plan, trained and supported into income — with the community around them brought along.",
-      caption: "Programme photographs to come — therapy rooms, the ICT laboratory, the tailoring and carpentry workshops, the farm at Ekombitié.",
+      caption:
+        "Placeholder photography — the therapy rooms, the ICT laboratory, the workshops and the farm at Ekombitié.",
       items: [
         {
           n: "01",
@@ -104,6 +108,7 @@ export const pages = {
       lead: "Bridge of Hope is pre-operational. The figures below are the commitments in its planning documents — targets and estimates — and they will be published here as results against them.",
       banner:
         "No results are published yet. The foundation reports quarterly and annually to its funders and stakeholders.",
+      imageCaption: "The planning documents behind every figure on this page.",
       figures: [
         { figure: "1,000", label: "persons with disabilities to be reached in the first cycle, youth and women prioritised", note: "Target — Concept Note" },
         { figure: "600m", label: "XAF required for initial setup, staffing, equipment and operations for the first two years (approximately one million US dollars)", note: "Estimate — Business Plan, December 2025" },
@@ -150,6 +155,7 @@ export const pages = {
         },
       ],
       formula: "Capital + Land + People + Markets + Knowledge + Technology + Partnerships + Impact",
+      imageCaption: "Ekombitié — land, workshops and training ground.",
       linkHeading: "Where the connection is practical",
       link: "Where appropriate, ACE Global Nexus and ACE-AGRO Farms create routes for trained beneficiaries: internships, agricultural projects, entrepreneurship and supply chains. Social impact should not end with assistance.",
     },
@@ -177,6 +183,7 @@ export const pages = {
         },
       ],
       note: "Volunteering and professional placements are being organised. Write to the address above and say what you can offer.",
+      imageCaption: "Where support lands: tools, materials and a working classroom.",
     },
     contact: {
       title: "Contact",
@@ -187,6 +194,7 @@ export const pages = {
         { name: "Headquarters and rehabilitation centre", detail: "Yaoundé, Cameroon — centrally located, with access to public transport." },
         { name: "Operational facilities", detail: "Ekombitié village, approximately 70 km from Yaoundé — farm, poultry, workshops and residential quarters." },
       ],
+      imageCaption: "Headquarters in Yaoundé, and the road to Ekombitié.",
       form: {
         heading: "Write to the foundation",
         name: "Your name",
@@ -211,7 +219,10 @@ export const pages = {
       problemHeading: "Le problème qu'elle a été créée pour résoudre",
       problem:
         "Les personnes en situation de handicap au Cameroun se heurtent à des obstacles majeurs pour accéder à la santé, à l'éducation et à l'emploi. Dans les communautés rurales et desservies, la réhabilitation est extrêmement limitée, ce qui accroît la dépendance et l'exclusion sociale. La formation professionnelle et l'opportunité économique sont plus rares encore. La stigmatisation et le manque de sensibilisation éloignent les gens de la vie familiale et communautaire. La fondation a été créée pour y répondre par une intervention intégrée.",
+      imageCaption: "Le centre de réhabilitation s'établira au cœur de Yaoundé.",
       valuesHeading: "Valeurs fondamentales",
+      valuesLead:
+        "Cinq engagements qui décident de ce que la fondation fait, et de ce qu'elle refuse.",
       values: ["Inclusion", "Autonomisation", "Accessibilité", "Autonomie", "Reddition des comptes"],
       sustainabilityHeading: "Comment elle entend durer",
       sustainability: [
@@ -243,12 +254,13 @@ export const pages = {
       agnHeading: "Au-delà de la fondation",
       agn:
         "Christopher est également fondateur et dirigeant d'ACE Global Nexus, une plateforme internationale de conseil et d'investissement qui relie les entreprises et les opportunités africaines aux marchés, investisseurs, partenaires et institutions mondiaux. Cette expérience plus large apporte une perspective mondiale au développement local, et c'est pourquoi Bridge of Hope est conçu autour des relations plutôt que de la charité.",
-      caption: "Portrait et photographies d'archive à venir.",
+      caption: "Photographies de substitution — le portrait et les archives du fondateur suivront.",
     },
     programmes: {
       title: "Programmes",
       lead: "Six programmes, menés comme un seul parcours. Un bénéficiaire est évalué, reçoit un plan individuel, se forme et est accompagné vers le revenu — avec sa communauté emmenée avec lui.",
-      caption: "Photographies des programmes à venir — salles de thérapie, laboratoire informatique, ateliers de couture et de menuiserie, ferme d'Ekombitié.",
+      caption:
+        "Photographies de substitution — les salles de thérapie, le laboratoire informatique, les ateliers et la ferme d'Ekombitié.",
       items: [
         {
           n: "01",
@@ -301,6 +313,7 @@ export const pages = {
       lead: "Bridge of Hope est en phase de pré-exploitation. Les chiffres ci-dessous sont les engagements des documents de planification — objectifs et estimations — et seront publiés ici en résultats constatés.",
       banner:
         "Aucun résultat n'est encore publié. La fondation rend compte chaque trimestre et chaque année à ses financeurs et parties prenantes.",
+      imageCaption: "Les documents de planification derrière chaque chiffre de cette page.",
       figures: [
         { figure: "1 000", label: "personnes en situation de handicap à atteindre au premier cycle, jeunes et femmes en priorité", note: "Objectif — Note de concept" },
         { figure: "600 M", label: "FCFA requis pour l'installation initiale, le personnel, les équipements et le fonctionnement durant les deux premières années (environ un million de dollars US)", note: "Estimation — Plan d'affaires, décembre 2025" },
@@ -347,6 +360,7 @@ export const pages = {
         },
       ],
       formula: "Capital + Terre + Personnes + Marchés + Savoir + Technologie + Partenariats + Impact",
+      imageCaption: "Ekombitié — terre, ateliers et terrain de formation.",
       linkHeading: "Là où la connexion devient concrète",
       link: "Le cas échéant, ACE Global Nexus et ACE-AGRO Farms ouvrent des débouchés aux bénéficiaires formés : stages, projets agricoles, entrepreneuriat et chaînes d'approvisionnement. L'impact social ne doit pas s'arrêter à l'assistance.",
     },
@@ -374,6 +388,7 @@ export const pages = {
         },
       ],
       note: "Le bénévolat et les placements professionnels sont en cours d'organisation. Écrivez à l'adresse ci-dessus en indiquant ce que vous pouvez apporter.",
+      imageCaption: "Là où le soutien atterrit : outils, matériel et une classe en activité.",
     },
     contact: {
       title: "Contact",
@@ -384,6 +399,7 @@ export const pages = {
         { name: "Siège et centre de réhabilitation", detail: "Yaoundé, Cameroun — emplacement central, accessible par les transports en commun." },
         { name: "Installations opérationnelles", detail: "Village d'Ekombitié, à environ 70 km de Yaoundé — ferme, aviculture, ateliers et logements." },
       ],
+      imageCaption: "Le siège à Yaoundé, et la route d'Ekombitié.",
       form: {
         heading: "Écrire à la fondation",
         name: "Votre nom",

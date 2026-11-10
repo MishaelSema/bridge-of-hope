@@ -1,10 +1,31 @@
 import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { pages } from "@/lib/pages";
-import { PageHead } from "@/components/page-head";
-import { Plate, Provenance } from "@/components/editorial";
+import { photo } from "@/lib/images";
+import { PageHero } from "@/components/page-hero";
+import { Figure } from "@/components/figure";
+import { buildMetadata, siteName } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "The Record — Bridge of Hope" };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : "en";
+  const p = pages[locale].impact;
+  return buildMetadata({
+    locale,
+    title: `${locale === "en" ? "The Record" : "Les Chiffres"} — ${siteName}`,
+    description: p.lead,
+    path: "/impact",
+    extraKeywords: [
+      "disability NGO impact Cameroon",
+      "Bridge of Hope results",
+      "impact personnes handicapées Cameroun",
+    ],
+  });
+}
 
 export default async function ImpactPage({
   params,
@@ -17,55 +38,74 @@ export default async function ImpactPage({
 
   return (
     <>
-      <PageHead title={p.title} lead={p.lead} />
+      <PageHero
+        photo={photo("youth")}
+        alt={locale === "fr" ? photo("youth").altFr : photo("youth").alt}
+        title={p.title}
+        lead={p.lead}
+        credit={photo("youth").credit}
+      />
 
-      <section className="border-b border-rule bg-paper-deep">
-        <div className="mx-auto max-w-[1600px] px-5 py-8 md:px-10 md:py-10">
-          <p className="caption max-w-[70ch]">{p.banner}</p>
+      {/* The honesty strip */}
+      <section className="bg-mint">
+        <div className="mx-auto max-w-[1400px] px-5 py-6 md:px-8 md:py-7">
+          <p className="max-w-[76ch] text-[0.92rem] leading-[1.65] text-ink md:text-[0.98rem]">
+            {p.banner}
+          </p>
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-          <ul className="grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-4">
+      {/* The figures */}
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <ul className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {p.figures.map((item) => (
-              <li key={item.figure} className="bg-paper px-6 py-10 md:px-8 md:py-12">
-                <p className={`display text-[clamp(2.6rem,4.4vw,3.6rem)]${item.figure.startsWith("600") ? " text-live" : ""}`}>
+              <li key={item.figure} className="border-t-2 border-ink pt-6">
+                <p
+                  className={`display text-[clamp(2.6rem,6.5vw,4rem)] leading-none ${
+                    item.figure.startsWith("600") ? "text-mint-deep" : "text-ink"
+                  }`}
+                >
                   {item.figure}
                 </p>
-                <p className="mt-5 max-w-[30ch] text-[0.95rem] leading-[1.65]">
-                  {item.label}
+                <p className="mt-5 max-w-[28ch] text-[0.95rem] leading-[1.68]">{item.label}</p>
+                <p className="mt-3 text-[0.74rem] leading-[1.5] tracking-[0.06em] text-slate">
+                  {item.note}
                 </p>
-                <Provenance>{item.note}</Provenance>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="border-t border-rule">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-5 py-16 md:grid-cols-[1fr_1px_1fr] md:gap-0 md:px-10 md:py-24">
-          <div className="md:pr-14">
-            <h2 className="display max-w-[16ch] text-[clamp(1.75rem,3.2vw,2.6rem)]">
+      {/* What will be measured */}
+      <section className="bg-sand py-16 md:py-24">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="display max-w-[16ch] text-[clamp(1.7rem,4.6vw,3rem)]">
               {p.kpiHeading}
             </h2>
-            <ul className="mt-8 max-w-[54ch] space-y-5">
+            <ul className="mt-8">
               {p.kpis.map((kpi) => (
-                <li key={kpi} className="border-b border-rule pb-5 text-[1rem] leading-[1.7] last:border-0">
+                <li key={kpi} className="border-t border-mist py-5 text-[1rem] leading-[1.7] last:border-b">
                   {kpi}
                 </li>
               ))}
             </ul>
           </div>
-          <div aria-hidden className="gutter-rule hidden w-px md:block" />
-          <div className="flex flex-col md:pl-14">
-            <h2 className="display max-w-[16ch] text-[clamp(1.75rem,3.2vw,2.6rem)]">
+
+          <div>
+            <h2 className="display max-w-[16ch] text-[clamp(1.7rem,4.6vw,3rem)]">
               {p.reportHeading}
             </h2>
             <p className="mt-6 max-w-[54ch] text-[1rem] leading-[1.78]">{p.report}</p>
-            <Plate
-              caption={locale === "en" ? "Plate — reporting archive. Photograph to come." : "Planche — archives de rapports. Photographie à venir."}
-              className="mt-10 h-[36vh] md:h-[42vh]"
+            <Figure
+              photo={photo("business")}
+              alt={locale === "fr" ? photo("business").altFr : photo("business").alt}
+              caption={p.imageCaption}
+              credit={photo("business").credit}
+              frameClassName="mt-9 aspect-[3/2]"
+              sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </div>
         </div>

@@ -1,11 +1,31 @@
 import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { pages } from "@/lib/pages";
-import { PageHead } from "@/components/page-head";
-import { Plate, Provenance } from "@/components/editorial";
+import { photo } from "@/lib/images";
+import { PageHero } from "@/components/page-hero";
 import { ContactForm } from "@/components/contact-form";
+import { buildMetadata, siteName } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Contact — Bridge of Hope" };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : "en";
+  const p = pages[locale].contact;
+  return buildMetadata({
+    locale,
+    title: `${locale === "en" ? "Contact" : "Contact"} — ${siteName}`,
+    description: p.lead,
+    path: "/contact",
+    extraKeywords: [
+      "Bridge of Hope contact Yaoundé",
+      "contact fondation handicap Cameroun",
+      "rehabilitation centre Yaoundé contact",
+    ],
+  });
+}
 
 export default async function ContactPage({
   params,
@@ -18,56 +38,54 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHead title={p.title} lead={p.lead} />
+      <PageHero
+        photo={photo("city")}
+        alt={locale === "fr" ? photo("city").altFr : photo("city").alt}
+        title={p.title}
+        lead={p.lead}
+        credit={photo("city").credit}
+      />
 
-      <section>
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-5 py-16 md:grid-cols-[1.05fr_1px_0.95fr] md:gap-0 md:px-10 md:py-24">
-          <div className="md:pr-14">
-            <h2 className="display max-w-[16ch] text-[clamp(1.75rem,3.2vw,2.6rem)]">
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div>
+            <h2 className="display max-w-[16ch] text-[clamp(1.7rem,4.6vw,3rem)]">
               {p.form.heading}
             </h2>
-            <div className="mt-10">
+            <div className="mt-9">
               <ContactForm locale={locale} form={p.form} />
             </div>
           </div>
 
-          <div aria-hidden className="gutter-rule hidden w-px md:block" />
-
-          <div className="flex flex-col md:pl-14">
-            <ul>
-              <li className="border-b border-rule pb-6">
-                <p className="caption">{locale === "en" ? "Telephone" : "Téléphone"}</p>
-                <p className="mt-3 text-[1.05rem]">
+          <div>
+            <dl className="grid gap-px bg-mist">
+              <div className="bg-paper py-6">
+                <dt className="label text-mint-deep">
+                  {locale === "en" ? "Telephone" : "Téléphone"}
+                </dt>
+                <dd className="mt-3 text-[1.15rem]">
                   <a href={`tel:${p.phone.replace(/\s/g, "")}`}>{p.phone}</a>
-                </p>
-              </li>
-              <li className="border-b border-rule py-6">
-                <p className="caption">{locale === "en" ? "Email" : "Courriel"}</p>
-                <p className="mt-3 text-[1.05rem] leading-[1.9]">
-                  {p.emails.map((email, index) => (
-                    <span key={email}>
-                      {index > 0 && <br />}
+                </dd>
+              </div>
+              <div className="bg-paper py-6">
+                <dt className="label text-mint-deep">
+                  {locale === "en" ? "Email" : "Courriel"}
+                </dt>
+                <dd className="mt-3 space-y-1 text-[1.05rem] leading-[1.8]">
+                  {p.emails.map((email) => (
+                    <p key={email}>
                       <a href={`mailto:${email}`}>{email}</a>
-                    </span>
+                    </p>
                   ))}
-                </p>
-              </li>
+                </dd>
+              </div>
               {p.locations.map((loc) => (
-                <li key={loc.name} className="border-b border-rule py-6">
-                  <p className="caption">{loc.name}</p>
-                  <p className="mt-3 max-w-[42ch] text-[0.98rem] leading-[1.7]">{loc.detail}</p>
-                </li>
+                <div key={loc.name} className="bg-paper py-6">
+                  <dt className="label text-mint-deep">{loc.name}</dt>
+                  <dd className="mt-3 max-w-[42ch] text-[0.98rem] leading-[1.7]">{loc.detail}</dd>
+                </div>
               ))}
-            </ul>
-
-            <Plate
-              caption={
-                locale === "en"
-                  ? "Plate — headquarters and the road to Ekombitié. Photograph to come."
-                  : "Planche — le siège et la route d'Ekombitié. Photographie à venir."
-              }
-              className="mt-10 h-[38vh] md:h-[44vh]"
-            />
+            </dl>
           </div>
         </div>
       </section>

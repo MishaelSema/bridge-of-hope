@@ -18,5 +18,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/((?!_next|api|favicon.ico|robots.txt).*)"],
+  // Files with an extension (images, icons, manifests) are served as-is; only
+  // page routes are redirected to a locale.
+  matcher: ["/", "/((?!_next|api|favicon.ico|robots.txt|.*\\.[a-zA-Z0-9]+$).*)"],
 };

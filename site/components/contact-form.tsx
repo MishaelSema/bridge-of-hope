@@ -26,7 +26,7 @@ type Props = {
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 const fieldClass =
-  "mt-3 w-full border-0 border-b border-rule bg-transparent px-0 py-3 text-[1rem] text-ink placeholder:text-grey focus:border-ink focus:outline-none";
+  "mt-3 w-full rounded-none border border-mist bg-paper px-4 py-3.5 text-[1rem] text-ink placeholder:text-slate/70 focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-mint";
 
 export function ContactForm({ locale, form }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
@@ -70,7 +70,7 @@ export function ContactForm({ locale, form }: Props) {
       <p
         role="status"
         aria-live="polite"
-        className="border-t border-ink pt-5 text-[1rem] leading-[1.7]"
+        className="border-l-4 border-mint bg-sand px-5 py-5 text-[1rem] leading-[1.7]"
       >
         {form.success}
       </p>
@@ -79,50 +79,57 @@ export function ContactForm({ locale, form }: Props) {
 
   const errorFor = (key: keyof Errors) =>
     errors[key] ? (
-      <p role="alert" className="mt-2 text-[0.82rem] tracking-[0.06em] text-live uppercase">
+      <p role="alert" className="mt-2 text-[0.8rem] font-semibold tracking-[0.04em] text-[#b3261e] uppercase">
         {errors[key]}
       </p>
     ) : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-9">
-      <div>
-        <label htmlFor="cf-name" className="caption">
-          {form.name}
-        </label>
-        <input
-          id="cf-name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          required
-          aria-invalid={Boolean(errors.name)}
-          className={fieldClass}
-        />
-        {errorFor("name")}
+    <form onSubmit={onSubmit} noValidate className="space-y-7">
+      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2">
+        <div>
+          <label htmlFor="cf-name" className="label text-slate">
+            {form.name}
+          </label>
+          <input
+            id="cf-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+            aria-invalid={Boolean(errors.name)}
+            className={fieldClass}
+          />
+          {errorFor("name")}
+        </div>
+
+        <div>
+          <label htmlFor="cf-email" className="label text-slate">
+            {form.email}
+          </label>
+          <input
+            id="cf-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            aria-invalid={Boolean(errors.email)}
+            className={fieldClass}
+          />
+          {errorFor("email")}
+        </div>
       </div>
 
       <div>
-        <label htmlFor="cf-email" className="caption">
-          {form.email}
-        </label>
-        <input
-          id="cf-email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          aria-invalid={Boolean(errors.email)}
-          className={fieldClass}
-        />
-        {errorFor("email")}
-      </div>
-
-      <div>
-        <label htmlFor="cf-subject" className="caption">
+        <label htmlFor="cf-subject" className="label text-slate">
           {form.subject}
         </label>
-        <select id="cf-subject" name="subject" defaultValue={form.subjects[0]} className={fieldClass}>
+        <select
+          id="cf-subject"
+          name="subject"
+          defaultValue={form.subjects[0]}
+          className={fieldClass}
+        >
           {form.subjects.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -132,7 +139,7 @@ export function ContactForm({ locale, form }: Props) {
       </div>
 
       <div>
-        <label htmlFor="cf-message" className="caption">
+        <label htmlFor="cf-message" className="label text-slate">
           {form.message}
         </label>
         <textarea
@@ -151,7 +158,7 @@ export function ContactForm({ locale, form }: Props) {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-fit bg-live px-8 py-4 text-[0.8rem] tracking-[0.16em] text-paper uppercase transition-colors duration-200 hover:bg-ink focus-visible:bg-ink disabled:opacity-60 sm:w-auto"
+        className="btn btn-mint disabled:opacity-60"
       >
         {status === "sending" ? form.sending : form.submit}
       </button>

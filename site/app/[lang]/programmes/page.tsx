@@ -1,10 +1,31 @@
 import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { pages } from "@/lib/pages";
-import { PageHead } from "@/components/page-head";
-import { Plate, Provenance } from "@/components/editorial";
+import { photo } from "@/lib/images";
+import { PageHero } from "@/components/page-hero";
+import { buildMetadata, siteName } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Programmes — Bridge of Hope" };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : "en";
+  const p = pages[locale].programmes;
+  return buildMetadata({
+    locale,
+    title: `${locale === "en" ? "Programmes" : "Programmes"} — ${siteName}`,
+    description: p.lead,
+    path: "/programmes",
+    extraKeywords: [
+      "rehabilitation programmes Cameroon",
+      "vocational training disability Cameroon",
+      "programmes rééducation Cameroun",
+      "formation professionnelle handicap Cameroun",
+    ],
+  });
+}
 
 export default async function ProgrammesPage({
   params,
@@ -17,39 +38,53 @@ export default async function ProgrammesPage({
 
   return (
     <>
-      <PageHead title={p.title} lead={p.lead} />
+      <PageHero
+        photo={photo("carpentry")}
+        alt={locale === "fr" ? photo("carpentry").altFr : photo("carpentry").alt}
+        title={p.title}
+        lead={p.lead}
+        credit={photo("carpentry").credit}
+      />
 
-      <section>
-        <Plate caption={p.caption} className="h-[42vh] md:h-[64vh]" />
-      </section>
-
-      <section className="border-t border-rule">
-        <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-          <ol className="grid grid-cols-1 gap-px bg-rule md:grid-cols-2">
+      {/* The six programmes */}
+      <section className="bg-paper py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <ol className="grid grid-cols-1 gap-px bg-mist md:grid-cols-2 lg:grid-cols-3">
             {p.items.map((item) => (
-              <li key={item.n} className="bg-paper px-6 py-10 md:px-10 md:py-12">
-                <p className="caption">{item.n}</p>
-                <h2 className="display mt-4 max-w-[18ch] text-[clamp(1.5rem,2.6vw,2.1rem)]">
+              <li key={item.n} className="flex flex-col bg-paper px-6 py-9 md:px-8 md:py-11">
+                <span className="display text-[1rem] tracking-[0.1em] text-mint-deep">{item.n}</span>
+                <h2 className="display mt-5 max-w-[16ch] text-[clamp(1.35rem,3vw,1.85rem)]">
                   {item.title}
                 </h2>
-                <p className="mt-5 max-w-[46ch] text-[0.98rem] leading-[1.72]">{item.body}</p>
-                <Provenance>{item.target}</Provenance>
+                <p className="mt-4 flex-1 max-w-[42ch] text-[0.96rem] leading-[1.72] text-ink/80">
+                  {item.body}
+                </p>
+                <p className="mt-6 border-t border-mist pt-4 text-[0.74rem] leading-[1.5] tracking-[0.06em] text-slate">
+                  {item.target}
+                </p>
               </li>
             ))}
           </ol>
+          <p className="mt-6 text-[0.74rem] tracking-[0.06em] text-slate">{p.caption}</p>
         </div>
       </section>
 
-      <section className="border-t border-rule bg-paper-deep">
-        <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-          <h2 className="display max-w-[16ch] text-[clamp(1.75rem,3.2vw,2.6rem)]">
+      {/* How a beneficiary moves through it */}
+      <section className="bg-ink py-16 text-paper md:py-24">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <h2 className="display max-w-[18ch] text-[clamp(1.7rem,4.6vw,3rem)] text-paper">
             {p.flowHeading}
           </h2>
-          <ol className="mt-10 grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-5">
+
+          <ol className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
             {p.flow.map((step, index) => (
-              <li key={step} className="bg-paper-deep px-6 py-8">
-                <p className="caption">{String(index + 1).padStart(2, "0")}</p>
-                <p className="mt-4 text-[0.95rem] leading-[1.6]">{step}</p>
+              <li key={step} className="border-t-2 border-mint pt-5">
+                <span className="display text-[0.9rem] tracking-[0.1em] text-mint">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-4 max-w-[30ch] text-[0.98rem] leading-[1.65] text-paper/85">
+                  {step}
+                </p>
               </li>
             ))}
           </ol>

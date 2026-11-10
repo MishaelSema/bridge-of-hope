@@ -1,50 +1,60 @@
 @import "tailwindcss";
 
 @theme {
-  /* The Brodovitch world: warm paper, photogravure ink, one live red. */
-  --color-paper: #f6f1e7;
-  --color-paper-deep: #efe8da;
-  --color-ink: #1c1a17;
-  --color-grey: #67635c; /* text grey: 5.3:1 on paper, 4.9:1 on paper-deep — AA for captions and provenance */
-  --color-rule: #d3cabb;
-  --color-live: #a32127; /* 6.65:1 on paper — the one action and the one urgent figure */
+  /*
+   * The Bridge system: the foundation's deep teal, one living green, warm
+   * paper light. Two type families — a heavy grotesque for anything shouted,
+   * a light serif for anything human.
+   */
+  --color-ink: #053a52; /* deep teal — every dark surface, every headline */
+  --color-ink-deep: #022634; /* the ground behind photography */
+  --color-ink-soft: #0e4158; /* dark surface one step above ink */
+  --color-mint: #7fd6a9; /* the living green — one accent, used sparingly */
+  --color-mint-deep: #2f8f66; /* green fill on light surfaces */
+  --color-green-ink: #14654a; /* green as small text on light surfaces (5.4:1) */
+  --color-sand: #f6f3ec; /* warm light section */
+  --color-paper: #ffffff;
+  --color-slate: #5b6675; /* muted text on light (5.9:1 on white) */
+  --color-mist: #e2e5e8; /* hairline on light */
+  --color-fog: #aeb6bf; /* muted text on dark (8.1:1 on ink) */
 
-  --font-display: var(--font-bodoni), "Didot", "Bodoni MT", "Times New Roman", serif;
-  --font-text: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
+  --font-display: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-quote: var(--font-instrument), "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  --shadow-card: 0 18px 44px -26px rgba(2, 38, 52, 0.55);
+  --shadow-lift: 0 26px 60px -28px rgba(2, 38, 52, 0.6);
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-paper);
     color: var(--color-ink);
-    font-family: var(--font-text);
+    font-family: var(--font-body);
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
 
-  /* Display type is a didone: hairline contrast, tight leading, tightened tracking. */
-  .display {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-optical-sizing: auto;
-    line-height: 1.02;
+    font-weight: 800;
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 
-  /* Captions are small ranked lines under every plate. */
-  .caption {
-    font-family: var(--font-text);
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-grey);
-    line-height: 1.5;
+  p {
+    text-wrap: pretty;
   }
 
   a {
@@ -53,7 +63,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-live);
+    outline: 2px solid var(--color-mint);
     outline-offset: 3px;
   }
 
@@ -66,10 +76,11 @@
     position: absolute;
     left: -9999px;
     top: 0;
-    background: var(--color-ink);
-    color: var(--color-paper);
-    padding: 0.75rem 1.25rem;
     z-index: 100;
+    background: var(--color-mint);
+    color: var(--color-ink);
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
   }
 
   .skip:focus {
@@ -89,49 +100,311 @@
   }
 }
 
+@layer components {
+  /*
+   * Display type — the shouted voice. Uppercase, tight, heavy.
+   */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+  }
+
+  .display-tight {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+
+  /* The wordmark: mixed case, heavy, and never an all-caps shout. */
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+
+  /* Small uppercase utility voice: nav, buttons, credits. */
+  .label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* Buttons — stamped rectangles, no rounding, one green. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 1.05rem 1.9rem;
+    border: 1px solid transparent;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-mint {
+    background: var(--color-mint);
+    color: var(--color-ink);
+  }
+
+  .btn-mint:hover,
+  .btn-mint:focus-visible {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn-ink {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .btn-ink:hover,
+  .btn-ink:focus-visible {
+    background: var(--color-mint);
+    color: var(--color-ink);
+  }
+
+  .btn-white {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn-white:hover,
+  .btn-white:focus-visible {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* Navy that turns white on hover — used on the green calling section. */
+  .btn-navy {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .btn-navy:hover,
+  .btn-navy:focus-visible {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: color-mix(in srgb, var(--color-ink) 35%, transparent);
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: var(--color-paper);
+    border-color: rgba(255, 255, 255, 0.38);
+  }
+
+  .btn-outline-light:hover,
+  .btn-outline-light:focus-visible {
+    background: var(--color-paper);
+    border-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  /* Text link with a hairline that thickens on hover. */
+  .link-rule {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid currentColor;
+    transition:
+      color 200ms ease,
+      opacity 200ms ease;
+  }
+
+  .link-rule:hover {
+    opacity: 0.65;
+  }
+
+  .link-quiet {
+    border-bottom: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+    transition: border-color 200ms ease;
+  }
+
+  .link-quiet:hover {
+    border-bottom-color: currentColor;
+  }
+
+  /*
+   * The frame: every photograph sits on the navy ground, screened back to a
+   * single blue-green duotone, with press grain over the top.
+   */
+  .frame {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--color-ink);
+    background-image: linear-gradient(165deg, #0f4a63 0%, #053a52 55%, #022634 100%);
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.06);
+    mix-blend-mode: screen;
+    opacity: 0.88;
+  }
+
+  .frame-color img {
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 1;
+  }
+
+  /* Legibility wash + grain, so type always wins over the photograph. */
+  .frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(2, 38, 52, 0.34) 0%,
+      rgba(2, 38, 52, 0.08) 38%,
+      rgba(2, 38, 52, 0.62) 100%
+    );
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/></filter><rect width='180' height='180' filter='url(%23g)' opacity='0.5'/></svg>");
+  }
+
+  /* A slow, quiet lift as a photograph settles into its frame. */
+  .frame img {
+    transition:
+      transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 420ms ease,
+      opacity 420ms ease,
+      mix-blend-mode 420ms ease;
+  }
+
+  /* On hover the duotone lets the real colour through. */
+  .group:hover .frame img,
+  .frame:hover img {
+    transform: scale(1.04);
+    filter: none;
+    mix-blend-mode: normal;
+    opacity: 1;
+  }
+
+  /* The menu button: two lines, drawn, not an icon font. */
+  .burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 22px;
+    height: 12px;
+  }
+
+  .burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transition: transform 200ms ease;
+  }
+
+  .burger-x span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  .burger-x span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  /* Card lift — the one place the site is allowed depth. */
+  .card {
+    background: var(--color-paper);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 300ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* The green rule that marks a live action. */
+  .rule-mint {
+    height: 4px;
+    width: 3rem;
+    background: var(--color-mint);
+  }
+
+  .rule-ink {
+    height: 4px;
+    width: 3rem;
+    background: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 /*
- * Photogravure plate — the placeholder until real photography arrives.
- * A graded grey field with press grain, framed by nothing but the gutter.
+ * Scroll-driven reveal. Content is fully visible by default: the animation
+ * only exists where the browser can drive it and motion is welcome. Apply
+ * `reveal` to a section or a card to let it settle as it enters the screen.
  */
-.plate {
-  background-color: #b8b2a6;
-  background-image:
-    radial-gradient(120% 90% at 22% 18%, rgba(246, 241, 231, 0.55) 0%, rgba(246, 241, 231, 0) 55%),
-    radial-gradient(90% 80% at 82% 88%, rgba(28, 26, 23, 0.42) 0%, rgba(28, 26, 23, 0) 60%),
-    linear-gradient(178deg, #a9a396 0%, #8f8b83 46%, #6f6a61 100%);
-}
-
-.plate::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23g)' opacity='0.42'/></svg>");
-}
-
-/* The gutter: the seam the whole page turns on. */
-.gutter-rule {
-  background: linear-gradient(
-    to bottom,
-    rgba(211, 202, 187, 0) 0%,
-    var(--color-rule) 12%,
-    var(--color-rule) 88%,
-    rgba(211, 202, 187, 0) 100%
-  );
-}
-
-/*
- * The authored moment: the spread turns as a plate rises into its frame and
- * settles — an exponential ease-out keyed to the scroll, never a gate on
- * content. Elements are fully visible by default: without scroll-driven
- * animation support, or under prefers-reduced-motion, nothing animates.
- */
-@keyframes spread-in {
+@keyframes rise {
   from {
-    opacity: 0.35;
-    transform: translateY(18px);
+    opacity: 0;
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -142,9 +415,9 @@
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
-      animation: spread-in both cubic-bezier(0.16, 1, 0.3, 1);
+      animation: rise both cubic-bezier(0.16, 1, 0.3, 1);
       animation-timeline: view();
-      animation-range: entry 4% cover 26%;
+      animation-range: entry 2% cover 22%;
     }
   }
 }

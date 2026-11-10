@@ -8,29 +8,68 @@ export function isLocale(value: string): value is Locale {
 const en = {
   nav: {
     skip: "Skip to content",
-    menu: "Menu",
+    home: "Home",
     about: "About",
     programmes: "Programmes",
     founder: "The Founder",
     record: "The Record",
     ecosystem: "Ecosystem",
     involve: "Get Involved",
+    contact: "Contact",
+    blog: "Journal",
+    menu: "Menu",
+    close: "Close",
     switch: "Français",
-    switchAria: "Passer en français",
+    switchAria: "Switch to French",
+    support: "Support the work",
+    supportShort: "Support",
+  },
+  utility: {
+    phone: "+237 675 033 792",
+    email: "ekhrys@yahoo.com",
+    location: "Yaoundé & Ekombitié, Cameroon",
   },
   hero: {
-    name: "Bridge of Hope",
+    headline: "From rehabilitation to a livelihood",
     mission:
-      "Connecting communities and opportunities for persons with disabilities in Cameroon.",
-    caption: "Plate I — Yaoundé, Cameroon. Photograph to come.",
+      "Bridge of Hope Foundation connects persons with disabilities in Cameroon to rehabilitation, skills and markets — so that care becomes a livelihood, and dependence becomes enterprise.",
     action: "Support the work",
+    secondary: "See the programmes",
+    caption: "Placeholder photography — the foundation's own images to follow.",
+    slide: "Slide",
+    previousSlide: "Previous slide",
+    nextSlide: "Next slide",
   },
-  sections: {
-    claimOne: "Rehabilitation without a livelihood returns people to the same dependency.",
-    evidenceOne:
+  home: {
+    doors: [
+      {
+        title: "Rehabilitation & health",
+        body: "Physiotherapy, occupational and speech therapy, and psychosocial support for children and adults.",
+        link: "Programme 01",
+      },
+      {
+        title: "Skills & livelihoods",
+        body: "ICT, tailoring, carpentry, agriculture and events planning, taught to the standard of the labour market.",
+        link: "Programme 03",
+      },
+      {
+        title: "Community & advocacy",
+        body: "Leadership, self-advocacy, public awareness and integration into ordinary community life.",
+        link: "Programme 05",
+      },
+    ],
+    problemHeading: "Rehabilitation without a livelihood returns people to the same dependency.",
+    problemBody:
       "In Cameroon, five to six per cent of the population lives with a disability. Existing rehabilitation services are urban-centred and rarely lead to training or income. In rural communities such as Ekombitié, seventy kilometres from Yaoundé, services are close to absent.",
-    sourceOne: "Source: National Institute of Statistics (INS), 2025; Foundation field assessment.",
-    claimTwo: "One pathway, taken in four stages.",
+    problemSource: "Source: National Institute of Statistics (INS), 2025; foundation field assessment.",
+    problemStats: [
+      { figure: "5–6%", label: "of the population lives with a disability" },
+      { figure: "70 km", label: "from Ekombitié to the nearest rehabilitation service" },
+      { figure: "1", label: "integrated centre planned, with facilities on the farm" },
+    ],
+    pathwayHeading: "One pathway, taken in four stages.",
+    pathwayLead:
+      "A beneficiary is assessed, given an individual plan, trained and supported into income — with the community around them brought along.",
     pathway: [
       {
         title: "Rehabilitation",
@@ -49,36 +88,57 @@ const en = {
         body: "Leadership, self-advocacy and community integration — the point of the whole undertaking.",
       },
     ],
-    claimThree: "Twenty-two years of connecting people to opportunity.",
-    founder:
-      "Christopher A. Ekom spent more than twenty-two years in commercial diplomacy at the United States Embassy in Yaoundé, strengthening trade and investment between Cameroon and the United States. He founded Bridge of Hope on a belief formed there: that people prosper when knowledge, resources, markets and potential are connected.",
+    founderHeading: "Twenty-two years of connecting people to opportunity.",
     founderQuote:
       "True development begins when people are given the opportunity to discover their potential, develop their capabilities, and participate with dignity in the economic and social life of their communities.",
     founderAttribution: "Christopher A. Ekom, Founder",
-    founderCaption: "Portrait of the Founder to come.",
-    claimFour: "The record, kept plainly.",
-    record: [
-      { figure: "1,000", label: "persons with disabilities reached in the first cycle", note: "Target — youth and women prioritised" },
-      { figure: "600m", label: "XAF required for setup and the first two years", note: "Estimate — Business Plan, December 2025" },
-      { figure: "2", label: "sites — a rehabilitation centre in Yaoundé and operational facilities at Ekombitié", note: "Planned" },
+    founderBody:
+      "Christopher A. Ekom spent more than twenty-two years in commercial diplomacy at the United States Embassy in Yaoundé, strengthening trade and investment between Cameroon and the United States. He founded Bridge of Hope on a belief formed there: that people prosper when knowledge, resources, markets and potential are connected.",
+    founderLink: "Read the full profile",
+    founderCaption: "The bridge over the Sanaga — the name, and the idea.",
+    recordHeading: "The record, kept plainly.",
+    recordRows: [
+      {
+        figure: "1,000",
+        label: "persons with disabilities reached in the first cycle",
+        note: "Target — youth and women prioritised",
+      },
+      {
+        figure: "600m",
+        label: "XAF required for setup and the first two years",
+        note: "Estimate — Business Plan, December 2025",
+      },
+      {
+        figure: "2",
+        label: "sites — a rehabilitation centre in Yaoundé and operational facilities at Ekombitié",
+        note: "Planned",
+      },
     ],
-    sourceRecord: "Figures above are planning targets and estimates, not yet recorded results.",
-    claimFive: "Every figure carries its source.",
-    closingHead: "The bridge is built by those who cross it with us.",
-    closingBody:
+    recordSource: "Figures above are planning targets and estimates, not yet recorded results.",
+    recordLink: "The full record",
+    askHeading: "The bridge is built by those who cross it with us.",
+    askBody:
       "Bridge of Hope Foundation is raising the funding that turns this plan into a working centre. Grants, partnerships and individual gifts all carry the same weight: they move a person from dependence to enterprise.",
-    actionPrimary: "Support the work",
-    actionPartner: "Partner with us",
-    actionServices: "Find services",
+    askPrimary: "Support the work",
+    askPartner: "Partner with us",
+    askServices: "Find services",
   },
   footer: {
-    values: "Inclusion · Empowerment · Accessibility · Self-reliance · Accountability",
-    descriptor: "Disability Advocacy, Rehabilitation and Empowerment Center — Yaoundé, Cameroon",
+    pages: "Pages",
     contact: "Contact",
+    locationsLabel: "Locations",
+    privacy: "Privacy",
+    terms: "Terms",
+    cookies: "Cookies",
+    accessibilityLink: "Accessibility",
+    values: "Inclusion · Empowerment · Accessibility · Self-reliance · Accountability",
+    descriptor:
+      "Disability advocacy, rehabilitation and empowerment centre — Yaoundé, Cameroon",
     phone: "+237 675 033 792",
-    emails: "ekhrys@yahoo.com · chrisekom@gmail.com",
-    locations: "Headquarters: Yaoundé. Operational facilities: Ekombitié village, ~70 km from Yaoundé.",
-    accessibility: "This site is built to WCAG 2.2 AA. If any part of it obstructs you, write to us and we will fix it.",
+    emails: ["ekhrys@yahoo.com", "chrisekom@gmail.com"],
+    locations: "Headquarters and rehabilitation centre in Yaoundé. Operational facilities at Ekombitié village, ~70 km from Yaoundé.",
+    accessibility:
+      "This site is built to WCAG 2.2 AA. If any part of it obstructs you, write to us and we will fix it.",
     legal: "Registered NGO, MINATD, under Law No. 2010/011.",
   },
 };
@@ -86,29 +146,68 @@ const en = {
 const fr: typeof en = {
   nav: {
     skip: "Aller au contenu",
-    menu: "Menu",
+    home: "Accueil",
     about: "À propos",
     programmes: "Programmes",
     founder: "Le Fondateur",
     record: "Les Chiffres",
     ecosystem: "L'écosystème",
     involve: "S'engager",
+    contact: "Contact",
+    blog: "Journal",
+    menu: "Menu",
+    close: "Fermer",
     switch: "English",
     switchAria: "Switch to English",
+    support: "Soutenir l'action",
+    supportShort: "Soutenir",
+  },
+  utility: {
+    phone: "+237 675 033 792",
+    email: "ekhrys@yahoo.com",
+    location: "Yaoundé & Ekombitié, Cameroun",
   },
   hero: {
-    name: "Bridge of Hope",
+    headline: "De la réhabilitation au revenu",
     mission:
-      "Relier les communautés et les opportunités pour les personnes en situation de handicap au Cameroun.",
-    caption: "Planche I — Yaoundé, Cameroun. Photographie à venir.",
+      "Bridge of Hope Foundation relie les personnes en situation de handicap au Cameroun à la réhabilitation, aux compétences et aux marchés — pour que le soin devienne un revenu, et la dépendance une entreprise.",
     action: "Soutenir l'action",
+    secondary: "Voir les programmes",
+    caption: "Photographies de substitution — les images de la fondation suivront.",
+    slide: "Diapositive",
+    previousSlide: "Diapositive précédente",
+    nextSlide: "Diapositive suivante",
   },
-  sections: {
-    claimOne: "La réhabilitation, sans revenu, ramène à la même dépendance.",
-    evidenceOne:
+  home: {
+    doors: [
+      {
+        title: "Réhabilitation & santé",
+        body: "Kinésithérapie, ergothérapie, orthophonie et soutien psychosocial pour les enfants et les adultes.",
+        link: "Programme 01",
+      },
+      {
+        title: "Compétences & revenus",
+        body: "TIC, couture, menuiserie, agriculture et organisation d'événements, au niveau du marché du travail.",
+        link: "Programme 03",
+      },
+      {
+        title: "Communauté & plaidoyer",
+        body: "Leadership, auto-représentation, sensibilisation publique et intégration à la vie communautaire.",
+        link: "Programme 05",
+      },
+    ],
+    problemHeading: "La réhabilitation, sans revenu, ramène à la même dépendance.",
+    problemBody:
       "Au Cameroun, cinq à six pour cent de la population vit avec un handicap. Les services de réhabilitation existants se concentrent en ville et aboutissent rarement à une formation ou à un revenu. Dans les communautés rurales comme Ekombitié, à soixante-dix kilomètres de Yaoundé, ces services sont quasiment absents.",
-    sourceOne: "Source : Institut National de la Statistique (INS), 2025 ; évaluation de terrain de la Fondation.",
-    claimTwo: "Un seul parcours, en quatre étapes.",
+    problemSource: "Source : Institut National de la Statistique (INS), 2025 ; évaluation de terrain de la Fondation.",
+    problemStats: [
+      { figure: "5–6 %", label: "de la population vit avec un handicap" },
+      { figure: "70 km", label: "d'Ekombitié au service de réhabilitation le plus proche" },
+      { figure: "1", label: "centre intégré prévu, avec des installations à la ferme" },
+    ],
+    pathwayHeading: "Un seul parcours, en quatre étapes.",
+    pathwayLead:
+      "Un bénéficiaire est évalué, reçoit un plan individuel, se forme et est accompagné vers le revenu — avec sa communauté emmenée avec lui.",
     pathway: [
       {
         title: "Réhabilitation",
@@ -127,36 +226,58 @@ const fr: typeof en = {
         body: "Leadership, auto-représentation et intégration communautaire — le but de toute l'entreprise.",
       },
     ],
-    claimThree: "Vingt-deux ans à relier les gens aux opportunités.",
-    founder:
-      "Christopher A. Ekom a passé plus de vingt-deux ans dans la diplomatie commerciale à l'Ambassade des États-Unis à Yaoundé, où il a renforcé les échanges commerciaux et investissements entre le Cameroun et les États-Unis. Il a fondé Bridge of Hope sur une conviction née là-bas : les gens prospèrent lorsque les connaissances, les ressources, les marchés et le potentiel sont reliés.",
+    founderHeading: "Vingt-deux ans à relier les gens aux opportunités.",
     founderQuote:
       "Le véritable développement commence lorsque les gens ont l'occasion de découvrir leur potentiel, de développer leurs capacités et de participer avec dignité à la vie économique et sociale de leur communauté.",
     founderAttribution: "Christopher A. Ekom, Fondateur",
-    founderCaption: "Portrait du fondateur à venir.",
-    claimFour: "Les chiffres, sans ornement.",
-    record: [
-      { figure: "1 000", label: "personnes en situation de handicap atteintes au premier cycle", note: "Objectif — jeunes et femmes en priorité" },
-      { figure: "600 M", label: "FCFA requis pour l'installation et les deux premières années", note: "Estimation — Plan d'affaires, décembre 2025" },
-      { figure: "2", label: "sites — un centre de réhabilitation à Yaoundé et des installations à Ekombitié", note: "Prévu" },
+    founderBody:
+      "Christopher A. Ekom a passé plus de vingt-deux ans dans la diplomatie commerciale à l'Ambassade des États-Unis à Yaoundé, où il a renforcé les échanges commerciaux et investissements entre le Cameroun et les États-Unis. Il a fondé Bridge of Hope sur une conviction née là-bas : les gens prospèrent lorsque les connaissances, les ressources, les marchés et le potentiel sont reliés.",
+    founderLink: "Lire le profil complet",
+    founderCaption: "Le pont sur la Sanaga — le nom, et l'idée.",
+    recordHeading: "Les chiffres, sans ornement.",
+    recordRows: [
+      {
+        figure: "1 000",
+        label: "personnes en situation de handicap atteintes au premier cycle",
+        note: "Objectif — jeunes et femmes en priorité",
+      },
+      {
+        figure: "600 M",
+        label: "FCFA requis pour l'installation et les deux premières années",
+        note: "Estimation — Plan d'affaires, décembre 2025",
+      },
+      {
+        figure: "2",
+        label: "sites — un centre de réhabilitation à Yaoundé et des installations à Ekombitié",
+        note: "Prévu",
+      },
     ],
-    sourceRecord: "Les chiffres ci-dessus sont des objectifs de planification et des estimations, pas encore des résultats constatés.",
-    claimFive: "Chaque chiffre porte sa source.",
-    closingHead: "Le pont se construit avec ceux qui le traversent à nos côtés.",
-    closingBody:
+    recordSource: "Les chiffres ci-dessus sont des objectifs de planification et des estimations, pas encore des résultats constatés.",
+    recordLink: "Les chiffres au complet",
+    askHeading: "Le pont se construit avec ceux qui le traversent avec nous.",
+    askBody:
       "Bridge of Hope Foundation lève les financements qui transforment ce projet en centre fonctionnel. Subventions, partenariats et dons individuels pèsent de la même façon : ils font passer une personne de la dépendance à l'entreprise.",
-    actionPrimary: "Soutenir l'action",
-    actionPartner: "Devenir partenaire",
-    actionServices: "Trouver des services",
+    askPrimary: "Soutenir l'action",
+    askPartner: "Devenir partenaire",
+    askServices: "Trouver des services",
   },
   footer: {
-    values: "Inclusion · Autonomisation · Accessibilité · Autonomie · Reddition des comptes",
-    descriptor: "Centre de plaidoyer, de réhabilitation et d'autonomisation des personnes handicapées — Yaoundé, Cameroun",
+    pages: "Pages",
     contact: "Contact",
+    locationsLabel: "Implantations",
+    privacy: "Confidentialité",
+    terms: "Conditions",
+    cookies: "Cookies",
+    accessibilityLink: "Accessibilité",
+    values: "Inclusion · Autonomisation · Accessibilité · Autonomie · Reddition des comptes",
+    descriptor:
+      "Centre de plaidoyer, de réhabilitation et d'autonomisation des personnes handicapées — Yaoundé, Cameroun",
     phone: "+237 675 033 792",
-    emails: "ekhrys@yahoo.com · chrisekom@gmail.com",
-    locations: "Siège : Yaoundé. Installations opérationnelles : village d'Ekombitié, à ~70 km de Yaoundé.",
-    accessibility: "Ce site est conforme au niveau AA de la norme WCAG 2.2. S'il vous entrave quelque part, écrivez-nous et nous le corrigerons.",
+    emails: ["ekhrys@yahoo.com", "chrisekom@gmail.com"],
+    locations:
+      "Siège et centre de réhabilitation à Yaoundé. Installations opérationnelles au village d'Ekombitié, à ~70 km de Yaoundé.",
+    accessibility:
+      "Ce site est conforme au niveau AA de la norme WCAG 2.2. S'il vous entrave quelque part, écrivez-nous et nous le corrigerons.",
     legal: "ONG enregistrée au MINATD, en vertu de la Loi n° 2010/011.",
   },
 };

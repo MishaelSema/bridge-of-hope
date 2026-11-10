@@ -1,253 +1,237 @@
 ---
 name: Bridge of Hope
-description: A two-page editorial spread — warm paper, photogravure ink, one live red, didone display type against geometric sans text.
+description: "Deep harbour navy, one living green, warm paper light. Heavy grotesque for anything shouted, light serif for anything human. Every photograph screened into a single duotone that lets its colour through on hover."
 colors:
-  paper: "#f6f1e7"
-  paper-deep: "#efe8da"
-  ink: "#1c1a17"
-  grey: "#67635c"
-  rule: "#d3cabb"
-  live: "#a32127"
-  plate-base: "#b8b2a6"
+  ink: "#0c1a27"
+  ink-deep: "#07121c"
+  ink-soft: "#16283a"
+  mint: "#7fd6a9"
+  mint-deep: "#2f8f66"
+  green-ink: "#14654a"
+  sand: "#f6f3ec"
+  paper: "#ffffff"
+  slate: "#5b6675"
+  mist: "#e2e5e8"
+  fog: "#aeb6bf"
 typography:
   display:
-    fontFamily: "Bodoni Moda, Didot, Bodoni MT, Times New Roman, serif"
-    fontSize: "clamp(3rem, 7.4vw, 5.75rem)"
-    fontWeight: 400
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.5rem, 8.6vw, 6rem)"
+    fontWeight: 800
+    lineHeight: 0.96
+    letterSpacing: "-0.03em"
+  heading:
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.9rem, 5.2vw, 3.4rem)"
+    fontWeight: 800
     lineHeight: 1.02
     letterSpacing: "-0.02em"
-  page-title:
-    fontFamily: "Bodoni Moda, Didot, Bodoni MT, Times New Roman, serif"
-    fontSize: "clamp(2.4rem, 5.2vw, 4.25rem)"
-    fontWeight: 400
-    lineHeight: 1.02
+  subhead:
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.25rem, 2.6vw, 1.85rem)"
+    fontWeight: 800
+    lineHeight: 1.15
     letterSpacing: "-0.02em"
-  headline:
-    fontFamily: "Bodoni Moda, Didot, Bodoni MT, Times New Roman, serif"
-    fontSize: "clamp(1.9rem, 3.6vw, 3rem)"
+  quote:
+    fontFamily: "Instrument Serif, Georgia, Times New Roman, serif"
+    fontSize: "clamp(1.4rem, 3.4vw, 2.4rem)"
+    fontStyle: "italic"
     fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.02em"
-  title:
-    fontFamily: "Bodoni Moda, Didot, Bodoni MT, Times New Roman, serif"
-    fontSize: "clamp(1.75rem, 3.2vw, 2.6rem)"
-    fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.02em"
-  figure:
-    fontFamily: "Bodoni Moda, Didot, Bodoni MT, Times New Roman, serif"
-    fontSize: "clamp(2.6rem, 5vw, 3.75rem)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.02em"
+    lineHeight: 1.22
   body:
-    fontFamily: "Jost, Futura, Century Gothic, system-ui, sans-serif"
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.75
   lead:
-    fontFamily: "Jost, Futura, Century Gothic, system-ui, sans-serif"
-    fontSize: "1.05rem"
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.02rem"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.72
+  label:
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.72rem"
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: "0.16em"
   caption:
-    fontFamily: "Jost, Futura, Century Gothic, system-ui, sans-serif"
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.72rem"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0.14em"
-  label:
-    fontFamily: "Jost, Futura, Century Gothic, system-ui, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0.16em"
+    letterSpacing: "0.06em"
 rounded:
   none: "0px"
 spacing:
-  container-sm: "20px"
   tight: "12px"
   cell: "24px"
   stack: "32px"
   container: "40px"
-  gutter-inset: "56px"
-  page: "64px"
-  spread: "80px"
-  page-lg: "96px"
-  spread-lg: "112px"
+  section: "80px"
+  section-lg: "112px"
 components:
   button-primary:
-    backgroundColor: "{colors.live}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.mint}"
+    textColor: "{colors.ink}"
     typography: "label"
     rounded: "{rounded.none}"
-    padding: "16px 32px"
+    padding: "17px 30px"
   button-primary-hover:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+  button-ink:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "12px 24px"
-  button-outline-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-  link-action:
-    textColor: "{colors.live}"
-    rounded: "{rounded.none}"
-    padding: "0"
-  input-field:
-    backgroundColor: "transparent"
+    borderColor: "1px solid rgba(12, 26, 39, 0.35)"
+  button-white:
+    backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    typography: "body"
-    rounded: "{rounded.none}"
-    padding: "12px 0"
+  frame:
+    backgroundColor: "{colors.ink}"
+    backgroundImage: "linear-gradient(165deg, #16344c 0%, #0c1a27 55%, #07121c 100%)"
+  card:
+    backgroundColor: "{colors.paper}"
+    boxShadow: "0 18px 44px -26px rgba(7, 18, 28, 0.55)"
 ---
 
 # Design System: Bridge of Hope
 
 ## Overview
 
-**Creative North Star: "The Brodovitch Spread"**
+**Creative North Star: "The Harbour"**
 
-Bridge of Hope is a two-page editorial spread, not a landing page. The world is Alexey Brodovitch's Harper's Bazaar: warm white paper under charcoal photogravure ink, full-bleed plates that run to the seam, and exactly one live element in lipstick red. Every section is a pose on the left page answered by evidence on the right, with a single hairline gutter holding the beat between them. The claim/evidence turn — not a card grid — is the system's core unit; a new screen is built by composing spreads, not by stacking components.
+Bridge of Hope speaks in the register of a harbour: deep navy water, one signal green, photographs screened to a single blue-green duotone so that no two images fight each other, and a heavy grotesque that shouts only when it means to. Everything is built mobile first — a phone is the primary instrument of a foundation whose beneficiaries read on small screens — and the layout widens from there without changing its mind.
 
-Density is sparse and asymmetric. Text is ragged-right, set in narrow measures around plates and rules; whitespace is the paper itself. The structural vocabulary is deliberately starved: hairline rules, 1px grid seams, ranked captions, and the didone at display size. No cards with fills or shadows, no rounded corners, no icon tiles, no second accent color. Depth comes from tonal banding of the paper and the photographic gradient inside a plate.
+The system is deliberately simple to apply: three grounds (navy, white, warm sand), one green, one type family for everything that is read and one light serif for the one thing that should feel human, and a single rule that no heading ever gets a kicker above it.
 
-Imagery is the photogravure plate: a graded grey field with press grain and a ranked caption naming the photograph that belongs there, until the foundation supplies its own. This is product truth — no stock photograph of strangers stands in for the foundation's own people. Motion is one authored moment: plates rise into their frames as the spread turns, scroll-keyed and fully disabled under reduced motion; content is never gated behind animation. WCAG 2.2 AA is a brand requirement and constrains the palette outright.
-
-**Key Characteristics:**
-- The spread: two equal pages split by a 1px gutter seam; claim left, evidence right
-- Six-color palette — warm paper ground, ink text, and a single live red reserved for one action or one urgent figure per view
-- Bodoni Moda at display sizes only; Jost for every word that is read, every caption and every control
-- Zero radius, zero shadow; structure drawn with hairlines and 1px grid seams
-- Every figure carries a provenance line; every plate carries a ranked caption, in AA-tested grey
-- Plates are the only animated element; everything else is still
+**Key characteristics:**
+- **Mobile first, always.** Every layout is written for 390px and widened at `sm` 640, `md` 768, `lg` 1024, `xl` 1280.
+- **Three grounds.** Navy for the hero and the footer, white for reading, warm sand for banding. The green is the only accent and it means "act here".
+- **One accent, used as action.** Green fills the primary button, the rule above a live heading, and the calling section. It is never decoration.
+- **No eyebrow headings.** A heading stands alone. Small uppercase text is a label, a caption or a credit — never a kicker announcing the heading below it.
+- **No icon set.** The only marks are a two-line menu button drawn in CSS, a text arrow on links, and a mint rule. No emoji, no icon font, no decorative glyphs.
+- **Photography is duotoned** and returns to full colour on hover.
+- **Sharp corners.** Radius is 0 everywhere.
 
 ## Colors
 
-The palette is warm paper under ink with one red that must stay rare; all six tokens are defined once in the project's theme block and nothing else may be introduced.
-
 ### Primary
-- **Live Red** (`colors.live`): the one action and the one urgent figure. It appears as the closing CTA, the hero action link, the funding-ask figure (the 600M XAF row), form error text, and the global focus ring. 6.65:1 on paper. It is never a background field, never decoration, never a heading color.
+- **Live Green** (`colors.mint`, `#7fd6a9`): the act. Primary buttons, the rule above a live heading, the calling section. On navy it reads at very high contrast; it is never used as small text on white.
+- **Green Ink** (`colors.green-ink`, `#14654a`): green as small text on light grounds — figure labels, small links. 5.4:1 on white.
 
 ### Neutral
-- **Paper** (`colors.paper`): the ground of every page and the fill of every ruled cell; also the text color on ink surfaces (button labels, plate caption bar).
-- **Paper Deep** (`colors.paper-deep`): a tonal step used only to band a whole section — the closing ask, the record banner, the gift section — signaling "this section is different" without a box.
-- **Ink** (`colors.ink`): all body and display text; also the hover/pressed fill for buttons, the strengthened input underline on focus, and the inverted selection color.
-- **Grey** (`colors.grey`): captions, provenance, legal and secondary lines. 5.31:1 on paper (4.9:1 on paper-deep) — this value was set by the AA requirement and is a floor, not a stylistic choice; no lighter grey may replace it.
-- **Rule** (`colors.rule`): every hairline, every grid seam, the gutter gradient itself. Structural only, never text.
-- **Plate Base** (`colors.plate-base`): the base of the photogravure field; the plate itself grades through photographic greys (light `#a9a396` → mid `#8f8b83` → dark `#6f6a61`) under a multiply grain overlay.
+- **Ink** (`colors.ink`, `#0c1a27`): every dark ground and every headline. Also the hover fill for the mint button.
+- **Ink Deep** (`colors.ink-deep`, `#07121c`): the ground behind photography.
+- **Sand** (`colors.sand`, `#f6f3ec`): the warm band that separates two white sections.
+- **Paper** (`colors.paper`): white — the reading ground, the card surface, the text on navy and on green.
+- **Slate** (`colors.slate`, `#5b6675`): muted text on light grounds. 5.9:1 on white.
+- **Fog** (`colors.fog`, `#aeb6bf`): muted text on navy. 8.1:1 on ink.
+- **Mist** (`colors.mist`, `#e2e5e8`): hairlines on light grounds.
 
 ### Named Rules
-**The One Red Rule.** Live red appears on at most one action or one urgent figure per view. Its rarity is the point: the eye that finds the red has found the thing to do. Focus rings and form errors are permitted in red because they, too, are the live element of the moment.
+**The One Green Rule.** Green marks the thing to do. It appears on one action and one heading rule per view. The calling section may take green as a full ground; nothing else does.
 
 ## Typography
 
-**Display Font:** Bodoni Moda (with Didot, Bodoni MT, Times New Roman fallbacks)
-**Body Font:** Jost (with Futura, Century Gothic, system-ui fallbacks)
-**Label/Mono Font:** Jost, tracked and uppercase — no monospace exists in this system.
+**Display & body:** Archivo (variable, 400–800), with system fallbacks.
+**Quote:** Instrument Serif, italic only.
 
-**Character:** The historic Didot/Futura pairing: a high-contrast didone that only ever appears at display size, against a warm geometric sans that carries every readable word. The didone poses; the sans answers.
+**Character:** a tight, heavy grotesque for statements and a humanist serif for the founder's words. The sans carries every word meant to be read; the serif appears exactly once per page, on a quote.
 
 ### Hierarchy
-- **Display** (400, `clamp(3rem, 7.4vw, 5.75rem)`, line-height 1.02, tracking -0.02em): the foundation name on the opening spread; capped at ~12ch so it breaks ragged.
-- **Page title** (400, `clamp(2.4rem, 5.2vw, 4.25rem)`, 1.02, -0.02em): the single `h1` of every inner page, capped at 15ch.
-- **Headline** (400, `clamp(1.9rem, 3.6vw, 3rem)`, 1.02, -0.02em): the claim posed on the left page of each home spread; 14–20ch.
-- **Title** (400, `clamp(1.75rem, 3.2vw, 2.6rem)`, 1.02, -0.02em): section headings on inner pages; 16–18ch.
-- **Figure** (400, `clamp(2.6rem, 5vw, 3.75rem)`, line-height 1): impact numbers and record rows — didone numerals at near-display scale. (The inner Record page runs the same figure a shade smaller, clamping to 3.6rem; recorded drift, not a second role.)
-- **Lead** (400, 1.05rem, 1.7): the one paragraph under a page title; 58ch.
-- **Body** (400, 1rem, 1.75): all running text, 54–62ch max measure; a secondary step at 0.95rem (1.7) carries list bodies and card copy.
-- **Caption / label** (400, 0.72rem, 1.5, tracking 0.14em, uppercase): ranked lines under plates and figures, form labels, column heads — always in Grey.
-- **Control label** (400, 0.8rem, 1.5, tracking 0.16em, uppercase): button text. Nav links sit at 0.82–0.86rem with 0.06em tracking.
-
-Below the ramp, two small display steps appear in single placements (list-item titles at 1.55→1.75rem, quote/card heads clamping ~1.5–2.25rem); treat them as title-scale variants, not new roles.
+- **Display** (800, `clamp(2.5rem, 8.6vw, 6rem)`, 0.96, -0.03em, uppercase): the hero statement.
+- **Heading** (800, `clamp(1.9rem, 5.2vw, 3.4rem)`, 1.02, -0.02em, uppercase): section claims and inner-page titles.
+- **Subhead** (800, `clamp(1.25rem, 2.6vw, 1.85rem)`, 1.15): card and list titles.
+- **Quote** (Instrument Serif italic, `clamp(1.4rem, 3.4vw, 2.4rem)`, 1.22): pull quotes and the founder's words.
+- **Lead** (400, 1.02rem, 1.72): the paragraph under a page title, 56–64ch.
+- **Body** (400, 1rem, 1.75): running text, 54–64ch.
+- **Label** (600, 0.72rem, 0.16em, uppercase): navigation, buttons, the small line under a title.
+- **Caption** (400, 0.72rem, 0.06em): photo captions and credits.
 
 ### Named Rules
-**The Didone-at-Display Rule.** Bodoni Moda is used only at headline scale and above — h1s, section claims, figures, the wordmark, pull quotes. Every word meant to be read is Jost. A paragraph never sets in the didone.
-**The Ranked Caption Rule.** Anything that would need an eyebrow elsewhere — a plate, a figure, a column, a form field — gets a ranked caption line instead: uppercase, tracked 0.14em, small, in Grey, with its numeral zero-padded (`01`, `02`). Captions annotate; they never announce above a heading as a kicker.
+**The No-Eyebrow Rule.** Nothing small and uppercase may sit directly above a heading. A label may sit below a title, beside a figure, or inside a list row — never as a kicker.
+**The One Serif Rule.** Instrument Serif appears only for quoted speech. One per page, at most.
 
 ## Layout
 
-**Container:** 1600px max, 20px side padding on small screens, 40px from `md` (768px) up.
+**Container:** 1400px max, 20px side padding on mobile, 32px from `md`.
 
-**The spread grid:** `1fr — 1px — 1fr` with a real 1px gutter column carrying the seam; the left page is inset 56px from the seam, the right page likewise (56px). Founder and gift spreads use the asymmetric variant (`1.35fr — 1px — 0.9fr` / `1.1fr — 1px — 0.9fr`). Below `md` the gutter disappears and pages stack single-column with a 40px gap.
+**Grounds:** navy → white → sand → white → green → navy (footer). The reading order alternates so that no two white sections touch.
 
-**Section rhythm:** sections are separated by a single top hairline — never by a background box. Inner pages run `py-16 → md:py-24` (64 → 96px); home spreads run `py-20 → md:py-28` (80 → 112px), with the closing ask opening to 128px on desktop. Within a section: heading → body 32px, body → provenance 12px, list rows 24px vertical.
+**First viewport:** the hero fills `92svh` on mobile and `96svh` from `md`; the title, the mission line and the two actions sit on the ground of the photograph; the three cards break out of it by 48–80px.
 
-**First viewport:** the opening spread fills the viewport below the header (`min-h: 100dvh − 4rem`); plate on the left page bleeding to the gutter, name and mission on the right, one red action at its foot. Below `md`, the plate becomes a 46vh band and the text follows.
+**Section rhythm:** `py-16` → `md:py-24` on inner pages; `py-20` → `md:py-28` on the home page.
 
-**Dividing dense content:** figure and value grids are not card rows — they are cells divided by 1px gaps over the Rule color (`gap-px` on a rule-colored grid), so the hairline does the work a border would.
-
-**Chrome:** sticky header, 56px tall on mobile / 64px on desktop, hairline bottom rule, paper at 90% with a 2px backdrop blur. Footer: hairline top rule, 4-column grid at `lg` (`1.2fr 1fr 1fr 0.8fr`), 2 columns at `md`, stacked below.
-
-**Responsive ladder:** `sm` 640px, `md` 768px, `lg` 1024px. Progressive disclosure: nav links reveal at `md`/`lg`, the spread collapses to a stack below `md`, grids step 1 → 2 → 4 columns.
+**Responsive ladder:** `sm` 640, `md` 768, `lg` 1024, `xl` 1280. Grids step 1 → 2 → 3 → 4 columns. The header grows its link set as the screen grows (3 links at `md`, 4 at `lg`, 6 at `xl`); the full set always lives in the menu panel.
 
 ### Named Rules
-**The Gutter Rule.** On desktop every claim is posed on the left page and its evidence answers on the right, across the 1px seam; body text never crosses the gutter and the seam never renders as a line between stacked mobile pages.
+**The Mobile-First Rule.** A layout is written for 390px and widened. Any rule that only exists above `md` is a convenience, never a requirement — every page is complete at 390px with no horizontal scroll.
 
 ## Elevation & Depth
 
-This system is flat. No `box-shadow` exists anywhere in the build — depth is conveyed by three other means: tonal banding (a whole section stepping from Paper to Paper Deep), the photographic gradient and grain inside a plate, and hairline rules that separate without enclosing. The single exception to transparency is the sticky header's 2px backdrop blur, which reads as paper held slightly off the page. Focus is a 2px solid Live Red outline offset 3px; selection inverts to Ink on Paper.
+Depth is carried by the photograph and the card, not by decoration.
+
+- **Cards** are white on the page ground with a single soft shadow (`0 18px 44px -26px rgba(7,18,28,.55)`) that deepens on hover while the card lifts 6px.
+- **Photographs** sit on the navy gradient ground, screened, washed and grained.
+- **Sections** change ground instead of gaining a border.
 
 ### Named Rules
-**The Flat Page Rule.** Surfaces are flat at rest and flat under interaction. Hover changes color or opacity (200ms), never elevation. If a future component needs a shadow to be legible, the component is wrong, not the system.
+**The Flat Page Rule.** Sections never gain a stroke or a floating box to look like a card. If a section needs a container, the container is the grid.
 
 ## Shapes
 
-Every corner in this system is sharp — radius is 0px on buttons, inputs, panels, plates, menus, and grid cells alike. Borders are hairlines: 1px in Rule for structure (sections, list rows, menus, table-like seams) and 1px in Ink for interactive commitment (outline buttons). The gutter's only geometry is a 1px column whose gradient fades out at both ends. Plates clip their content (`overflow: hidden`) so the grain and gradient terminate hard at the frame; the caption bar overlays the plate's foot rather than sitting outside it.
-
-### Named Rules
-**The Hairline Rule.** Structure is drawn, never boxed: sections, nav, footer, list rows and menu items are separated by 1px rules; dense grids divide with 1px gaps over the Rule color. A container never gains a stroke, fill, or radius to look like a card.
+Every corner is sharp. Buttons, cards, frames and panels are all radius 0. Structure is drawn with 1px rules in `mist` on light grounds and `rgba(255,255,255,.10)` on navy.
 
 ## Components
 
-Buttons are stamped, links are underlined, fields are ruled — the same hairline-and-ink language at every scale.
-
 ### Buttons
-- **Shape:** perfectly rectangular (radius 0), no shadow.
-- **Primary:** Live Red fill, Paper label, padding 16px 32px, Jost uppercase at 0.8rem / 0.16em tracking. Used for the one commit action of a section (write to the foundation; form submit).
-- **Hover / Focus:** fill steps to Ink over 200ms (both `:hover` and `:focus-visible`); disabled sits at 60% opacity. Focus never relies on color alone — the global 2px red outline remains available.
-- **Outline:** transparent fill, 1px Ink border, Ink label, padding 12px 24px, uppercase 0.8rem / 0.14em; hover and focus fill Ink with Paper label. This is the secondary/tertiary tier (involvement cells).
+- **Shape:** rectangular, no radius, no shadow, `17px 30px` padding.
+- **Primary (mint):** green ground, ink label. Hover → white ground.
+- **Ink:** navy ground, paper label. Hover → green ground.
+- **White:** paper ground, ink label. Hover → ink ground. Used on the green calling section.
+- **Outline:** transparent with a 1px ink border; hover fills with ink and inverts the label. On navy, `btn-outline-light` uses a paper border.
+- **Focus:** a 2px mint outline at 3px offset, everywhere.
 
 ### Links
-- **Action link (red):** Live Red text at 0.95rem, 0.04em tracking, hover fades to 70% opacity; may carry a trailing directional mark underlined in the same hairline. Reserved for the one action in a view.
-- **Underline link:** Ink text with a 1px Ink-at-25% underline that strengthens to full Ink on hover; footer lists use an offset underline instead. Nav links are bare — no underline, hover simply resolves Grey to Ink over 200ms.
+- **Action link:** a hairline under uppercase text, thickening to full current colour on hover, often with a trailing `→`.
+- **Quiet link:** a 1px underline at 28% opacity, strengthening on hover. Used in the footer and in lists.
 
-### Inputs / Fields
-- **Style:** no box. A single bottom rule (1px Rule) under transparent background, 12px vertical padding, 1rem Ink text, Grey placeholder; label sits above in caption style (uppercase, tracked, Grey).
-- **Focus:** the bottom rule darkens to Ink (200ms); fields suppress the default outline in favor of this border shift, which remains clearly visible for keyboard users.
-- **Error:** caption-adjacent text at 0.82rem, uppercase, 0.06em tracking, Live Red, announced via `role="alert"`; `aria-invalid` on the field. Success replaces the form with a bordered status line.
+### The Frame (photography)
+A `figure` with a navy gradient ground; the image is desaturated and screened onto that ground, washed with a top-to-bottom gradient for legibility, and finished with press grain. On hover the duotone releases: the filter clears, the blend returns to normal, the opacity rises to full, and the image scales 4% over 900ms. Frames can be given `tone="colour"` to skip the treatment entirely.
 
-### Navigation
-- **Style:** sticky hairline bar — wordmark in the didone (1.05 → 1.2rem), links in Jost at 0.82–0.86rem / 0.06em, evenly gapped; language switch in Grey resolving to Ink.
-- **Mobile:** a native disclosure menu (`<summary>` reading "Menu") opening a right-aligned Paper panel with a 1px Rule border; items are full-width rows divided by hairlines. No hamburger glyph, no icon set.
+### The Menu Panel
+A full-screen navy panel: the wordmark, eight numbered links in display type, the primary action, the contact details and the language switch. The button that opens it is two lines drawn in CSS (no glyph, no icon font). The panel locks the page behind it and closes on Escape.
 
-### Photogravure Plate (signature)
-The system's image unit and the only animated element. A figure filling its column (46vh minimum on mobile, full column on desktop), built from Plate Base graded by two radial light/shadow fields and a near-vertical linear gradient (light → mid → dark), overlaid with a multiply fractal-noise grain at 50% opacity. A ranked caption bar sits across the foot — Paper text on Ink at 60%, hairline of Paper at 40% above it. As the page scrolls, the plate rises 18px and resolves from 35% to full opacity (`cubic-bezier(0.16, 1, 0.3, 1)`, scroll-driven `view()` timeline, entry 4% → cover 26%). The animation lives only inside `@supports (animation-timeline: view())` + `prefers-reduced-motion: no-preference`; without either, the plate is simply there.
+### The Page Hero
+An inner page opens with a band of photography (`46vh` mobile, `64vh` from `md`), the page title set over it in paper, a mint rule above the title, and the lead beneath the band on white.
 
-### Gutter (signature)
-A 1px column spanning the spread's height, painted with a gradient that fades to transparent at both ends (Rule color from 12% to 88%), `aria-hidden`, hidden below `md`. It is the seam every spread turns on.
-
-### Provenance
-A caption-styled line, 12px below any figure, capped at 52ch, naming the source or the honest status of the number above it. Every figure on this site carries one.
+### The Hero Slideshow
+The opening screen carries one statement and four photographs that cycle
+beneath it — the people, the market, the land, the city. Slides cross-fade over
+1600ms, advance every seven seconds, pause while the pointer rests on the
+frame, and stop entirely for visitors who ask for reduced motion. Only the
+active slide and the one after it are loaded. The markers are four thin bars
+in the lower right, each a button with a spoken label; there is no arrow, no
+counter and no icon.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep Live Red to one action or one urgent figure per view; focus rings and errors may also carry it.
-- **Do** separate sections with a single top hairline and dense grids with 1px gaps over the Rule color — never with boxes.
-- **Do** cap every measure: display 12–20ch, body 54–62ch, lead 58ch, provenance 52ch, plate captions 70ch.
-- **Do** set the didone only at display scale and Jost for everything read; keep body line-height near 1.75 and display leading at 1.02 with -0.02em tracking.
-- **Do** give every figure a provenance line and every plate a ranked caption in Grey — the AA value (5.31:1) is the floor for caption text.
-- **Do** signal section change by stepping the ground to Paper Deep, and interactive state by color/opacity over 200ms.
-- **Do** keep content fully visible without animation: reveal effects only behind `@supports` + reduced-motion guards, and keep the skip link and 2px red focus ring working everywhere.
+- **Do** write mobile first and widen.
+- **Do** keep green to one action and one rule per view.
+- **Do** set headings in the heavy grotesque, in uppercase, with tight tracking.
+- **Do** give every photograph a caption and a credit line.
+- **Do** let photographs return to colour on hover.
+- **Do** cap measures: display 16–20ch, body 54–64ch, lead 56–64ch, captions 70ch.
+- **Do** keep the focus ring, the skip link and the menu panel working at every width.
 
 ### Don't:
-- **Don't** introduce a second accent color, a gradient brand fill, or any red beyond the One Red Rule.
-- **Don't** add rounded corners, box-shadows, elevation hovers, or card containers with fills and strokes — this world has none.
-- **Don't** add an icon library, icon tiles, or emoji; directional and menu affordances are text and hairlines.
-- **Don't** set running text, captions, or controls in the didone, and don't lighten Grey below the AA-tested value to make a layout quieter.
-- **Don't** fill a plate with stock photography of strangers — plates stay plates until the foundation's own photography arrives.
-- **Don't** let copy cross the gutter, and don't render the seam as a divider on stacked mobile layouts.
+- **Don't** put an eyebrow, a kicker or a small uppercase line above a heading.
+- **Don't** add an icon library, emoji, or decorative glyphs. The menu button is two CSS lines; links use a text arrow.
+- **Don't** introduce a second accent colour, a gradient brand fill, or rounded corners.
+- **Don't** present a stock photograph as the foundation's own people without the caption saying it is a placeholder.
+- **Don't** let a section cross the width without a ground change or a rule.
+- **Don't** hide content behind animation, and never gate content on motion.

@@ -1,6 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getDict, isLocale, type Locale } from "@/lib/i18n";
-import { Gutter, Plate, Provenance } from "@/components/editorial";
+import { heroSlides, photo } from "@/lib/images";
+import { Figure } from "@/components/figure";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 
 export default async function HomePage({
   params,
@@ -10,202 +13,242 @@ export default async function HomePage({
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : "en";
   const t = getDict(locale);
-  const s = t.sections;
+  const h = t.home;
+
+  const doorPhotos = [photo("sport"), photo("tailor"), photo("market")];
 
   return (
     <>
-      {/* ── I. The opening spread ─────────────────────────────────────── */}
-      <section className="grid min-h-[calc(100dvh-4rem)] grid-cols-1 md:grid-cols-[1fr_1px_1fr]">
-        <Plate caption={t.hero.caption} />
-        <Gutter className="hidden md:block" />
-
-        <div className="flex flex-col justify-between gap-16 px-5 pt-12 pb-14 md:px-12 md:pt-16 md:pb-16">
-          <div>
-            <h1 className="display max-w-[12ch] text-[clamp(3rem,7.4vw,5.75rem)]">
-              {t.hero.name}
-            </h1>
-            <p className="mt-7 max-w-[36ch] text-[1.05rem] leading-[1.62] md:text-[1.15rem]">
-              {t.hero.mission}
-            </p>
-          </div>
-
-          <div className="flex justify-end">
-            <Link
-              href={`/${locale}/get-involved`}
-              className="text-[0.95rem] tracking-[0.04em] text-live transition-opacity duration-200 hover:opacity-70"
-            >
-              {t.hero.action}
-              <span aria-hidden className="ml-3 border-b border-live pb-[2px]">
-                ↓
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── II. Why ───────────────────────────────────────────────────── */}
-      <section className="border-t border-rule">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-5 py-20 md:grid-cols-[1fr_1px_1fr] md:gap-0 md:px-10 md:py-28">
-          <div className="md:pr-14">
-            <h2 className="display max-w-[17ch] text-[clamp(1.9rem,3.6vw,3rem)]">
-              {s.claimOne}
-            </h2>
-          </div>
-          <Gutter className="hidden md:block" />
-          <div className="md:pl-14">
-            <p className="max-w-[58ch] text-[1rem] leading-[1.75] md:text-[1.05rem]">
-              {s.evidenceOne}
-            </p>
-            <Provenance>{s.sourceOne}</Provenance>
-          </div>
-        </div>
-      </section>
-
-      {/* ── III. The pathway — claim on the left page, the four stages answering on the right ── */}
-      <section id="programmes" className="border-t border-rule">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-5 py-20 md:grid-cols-[1fr_1px_1fr] md:gap-0 md:px-10 md:py-28">
-          <div className="md:pr-14">
-            <h2 className="display max-w-[16ch] text-[clamp(1.9rem,3.6vw,3rem)]">
-              {s.claimTwo}
-            </h2>
-            <p className="mt-8">
-              <Link
-                href={`/${locale}/programmes`}
-                className="text-[0.95rem] tracking-[0.04em] transition-opacity duration-200 hover:opacity-70"
-              >
-                {locale === "en" ? "All six programmes" : "Les six programmes"}
-                <span aria-hidden className="ml-3 border-b border-ink/40 pb-[2px]">→</span>
-              </Link>
-            </p>
-          </div>
-
-          <Gutter className="hidden md:block" />
-
-          <div className="md:pl-14">
-            <ol className="max-w-[54ch]">
-              {s.pathway.map((stage, index) => (
-                <li
-                  key={stage.title}
-                  className="border-b border-rule py-6 first:pt-0 last:border-0 last:pb-0"
-                >
-                  <div className="flex gap-5">
-                    <p className="caption pt-2">{String(index + 1).padStart(2, "0")}</p>
-                    <div>
-                      <h3 className="display text-[1.55rem] md:text-[1.75rem]">{stage.title}</h3>
-                      <p className="mt-2 max-w-[42ch] text-[0.95rem] leading-[1.7]">{stage.body}</p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* ── IV. The founder ───────────────────────────────────────────── */}
-      <section id="founder" className="border-t border-rule">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 md:grid-cols-[1.35fr_1px_0.9fr]">
-          <div className="px-5 py-20 md:px-10 md:py-28">
-            <h2 className="display max-w-[20ch] text-[clamp(1.9rem,3.6vw,3rem)]">
-              {s.claimThree}
-            </h2>
-
-            <blockquote className="mt-12 max-w-[44ch]">
-              <p className="display text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.18]">
-                “{s.founderQuote}”
+      {/* ── I. The opening ───────────────────────────────────────────── */}
+      <section className="relative">
+        <div className="frame grain relative min-h-[92svh] md:min-h-[96svh]">
+          <HeroSlideshow
+            slides={heroSlides}
+            locale={locale}
+            labels={{
+              previous: t.hero.previousSlide,
+              next: t.hero.nextSlide,
+              slide: t.hero.slide,
+            }}
+          />
+          <div className="absolute inset-0 z-[3] flex flex-col justify-end px-5 pt-20 pb-14 md:px-10 md:pt-24 md:pb-20">
+            <div className="max-w-[62rem]">
+              <span className="rule-mint" aria-hidden />
+              <h1 className="display mt-6 text-[clamp(2.5rem,8.6vw,6rem)] text-paper">
+                {t.hero.headline}
+              </h1>
+              <p className="mt-6 max-w-[44ch] text-[1.02rem] leading-[1.62] text-paper/85 md:text-[1.2rem] md:leading-[1.6]">
+                {t.hero.mission}
               </p>
-              <footer className="caption mt-6">{s.founderAttribution}</footer>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                <Link href={`/${locale}/get-involved`} className="btn btn-mint w-full sm:w-auto">
+                  {t.hero.action}
+                </Link>
+                <Link
+                  href={`/${locale}/programmes`}
+                  className="btn btn-outline-light w-full sm:w-auto"
+                >
+                  {t.hero.secondary}
+                </Link>
+              </div>
+            </div>
+          </div>
+          <p className="absolute top-6 right-5 z-[3] hidden max-w-[34ch] text-right text-[0.68rem] leading-[1.5] tracking-[0.06em] text-paper/60 md:top-8 md:right-10 md:block">
+            {t.hero.caption}
+          </p>
+        </div>
+      </section>
+
+      {/* ── II. The three doors, breaking the line of the photograph ──── */}
+      <section className="relative z-10 -mt-12 md:-mt-20">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {h.doors.map((door, index) => (
+              <li key={door.title}>
+                <Link
+                  href={`/${locale}/programmes`}
+                  className="card group reveal flex h-full flex-col overflow-hidden focus-visible:outline-2 focus-visible:outline-mint"
+                >
+                  <Figure
+                    photo={doorPhotos[index]}
+                    alt={locale === "fr" ? doorPhotos[index].altFr : doorPhotos[index].alt}
+                    frameClassName="aspect-[3/2] lg:aspect-[4/5]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    overlay={
+                      <h3 className="display max-w-[14ch] text-[1.15rem] text-paper lg:text-[1.35rem]">
+                        {door.title}
+                      </h3>
+                    }
+                  />
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <p className="flex-1 text-[0.95rem] leading-[1.7] text-slate">{door.body}</p>
+                    <span className="link-rule mt-6 w-fit text-ink">
+                      {door.link}
+                      <span aria-hidden>→</span>
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── III. The problem ─────────────────────────────────────────── */}
+      <section className="bg-paper pt-20 md:pt-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+            <h2 className="display max-w-[18ch] text-[clamp(1.9rem,5.2vw,3.4rem)]">
+              {h.problemHeading}
+            </h2>
+            <div>
+              <p className="max-w-[58ch] text-[1.02rem] leading-[1.75] md:text-[1.08rem]">
+                {h.problemBody}
+              </p>
+              <p className="mt-6 text-[0.78rem] leading-[1.6] tracking-[0.04em] text-slate">
+                {h.problemSource}
+              </p>
+            </div>
+          </div>
+
+          <dl className="mt-14 grid grid-cols-1 gap-px border-t border-mist bg-mist sm:grid-cols-3 md:mt-20">
+            {h.problemStats.map((stat) => (
+              <div key={stat.figure} className="bg-paper py-8 sm:px-6 md:py-10 lg:px-8">
+                <dt className="display text-[clamp(2.4rem,6vw,3.6rem)] leading-none text-ink">
+                  {stat.figure}
+                </dt>
+                <dd className="mt-4 max-w-[26ch] text-[0.95rem] leading-[1.65] text-slate">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ── IV. The pathway ──────────────────────────────────────────── */}
+      <section className="bg-sand py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-16">
+            <h2 className="display max-w-[16ch] text-[clamp(1.9rem,5.2vw,3.4rem)]">
+              {h.pathwayHeading}
+            </h2>
+            <p className="max-w-[52ch] text-[1.02rem] leading-[1.72] text-ink/80">{h.pathwayLead}</p>
+          </div>
+
+          <ol className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+            {h.pathway.map((stage, index) => (
+              <li key={stage.title} className="border-t-2 border-ink pt-6">
+                <span className="display text-[0.95rem] tracking-[0.1em] text-mint-deep">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="display mt-4 text-[1.3rem] tracking-[-0.02em] md:text-[1.5rem]">
+                  {stage.title}
+                </h3>
+                <p className="mt-3 max-w-[38ch] text-[0.95rem] leading-[1.7] text-ink/75">
+                  {stage.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── V. The founder ───────────────────────────────────────────── */}
+      <section className="bg-paper py-20 md:py-28">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          <div>
+            <h2 className="display max-w-[16ch] text-[clamp(1.9rem,5.2vw,3.4rem)]">
+              {h.founderHeading}
+            </h2>
+
+            <blockquote className="mt-8 md:mt-10">
+              <p className="font-quote text-[clamp(1.5rem,3.4vw,2.4rem)] leading-[1.22] text-ink italic">
+                “{h.founderQuote}”
+              </p>
+              <footer className="label mt-6 text-slate">{h.founderAttribution}</footer>
             </blockquote>
 
-            <p className="mt-12 max-w-[58ch] text-[1rem] leading-[1.75]">{s.founder}</p>
-            <p className="mt-8">
-              <Link
-                href={`/${locale}/founder`}
-                className="text-[0.95rem] tracking-[0.04em] transition-opacity duration-200 hover:opacity-70"
-              >
-                {locale === "en" ? "Read the full profile" : "Lire le profil complet"}
-                <span aria-hidden className="ml-3 border-b border-ink/40 pb-[2px]">→</span>
-              </Link>
-            </p>
+            <p className="mt-8 max-w-[58ch] text-[1rem] leading-[1.78]">{h.founderBody}</p>
+
+            <Link href={`/${locale}/founder`} className="link-rule mt-8 w-fit text-ink">
+              {h.founderLink}
+              <span aria-hidden>→</span>
+            </Link>
           </div>
 
-          <Gutter className="hidden md:block" />
-
-          <div className="flex">
-            <Plate caption={s.founderCaption} className="w-full" />
-          </div>
+          <Figure
+            photo={photo("bridge")}
+            alt={locale === "fr" ? photo("bridge").altFr : photo("bridge").alt}
+            caption={h.founderCaption}
+            credit={photo("bridge").credit}
+            frameClassName="aspect-[4/5] lg:aspect-[3/4]"
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
         </div>
       </section>
 
-      {/* ── V. The record ─────────────────────────────────────────────── */}
-      <section id="record" className="border-t border-rule">
-        <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-28">
-          <div className="grid gap-10 md:grid-cols-[1fr_1px_1fr] md:gap-0">
-            <h2 className="display max-w-[14ch] pr-0 text-[clamp(1.9rem,3.6vw,3rem)] md:pr-14">
-              {s.claimFour}
+      {/* ── VI. The record ───────────────────────────────────────────── */}
+      <section className="bg-sand py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            <h2 className="display max-w-[12ch] text-[clamp(1.9rem,5.2vw,3.4rem)]">
+              {h.recordHeading}
             </h2>
-            <Gutter className="hidden md:block" />
-            <div className="md:pl-14">
-              <dl className="grid grid-cols-1 gap-px bg-rule">
-                {s.record.map((row) => (
-                  <div key={row.figure} className="bg-paper py-7 first:pt-0">
+            <div>
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-3">
+                {h.recordRows.map((row) => (
+                  <div key={row.figure}>
                     <dt
-                      className={`display text-[clamp(2.6rem,5vw,3.75rem)] leading-none${
-                        row.figure.startsWith("600") ? " text-live" : ""
+                      className={`display text-[clamp(2.6rem,6vw,3.9rem)] leading-none ${
+                        row.figure.startsWith("600") || row.figure.startsWith("600 ")
+                          ? "text-mint-deep"
+                          : "text-ink"
                       }`}
                     >
                       {row.figure}
                     </dt>
-                    <dd className="mt-4 max-w-[46ch]">
-                      <p className="text-[1rem] leading-[1.7]">{row.label}</p>
-                      <Provenance>{row.note}</Provenance>
+                    <dd className="mt-4">
+                      <p className="max-w-[30ch] text-[0.95rem] leading-[1.68]">{row.label}</p>
+                      <p className="mt-2 text-[0.74rem] leading-[1.5] tracking-[0.06em] text-slate">
+                        {row.note}
+                      </p>
                     </dd>
                   </div>
                 ))}
               </dl>
-              <p className="caption mt-8 max-w-[56ch]">{s.sourceRecord}</p>
-              <p className="mt-6">
-                <Link
-                  href={`/${locale}/impact`}
-                  className="text-[0.95rem] tracking-[0.04em] transition-opacity duration-200 hover:opacity-70"
-                >
-                  {locale === "en" ? "The full record" : "Les chiffres au complet"}
-                  <span aria-hidden className="ml-3 border-b border-ink/40 pb-[2px]">→</span>
-                </Link>
+              <p className="mt-10 max-w-[58ch] text-[0.8rem] leading-[1.65] text-slate">
+                {h.recordSource}
               </p>
+              <Link href={`/${locale}/impact`} className="link-rule mt-6 w-fit text-ink">
+                {h.recordLink}
+                <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── VI. The ask ───────────────────────────────────────────────── */}
-      <section id="involved" className="border-t border-rule bg-paper-deep">
-        <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
-          <h2 className="display max-w-[18ch] text-[clamp(2.1rem,4.4vw,3.75rem)]">
-            {s.closingHead}
+      {/* ── VII. The ask — the one green surface in the site ────────── */}
+      <section className="bg-mint py-20 text-ink md:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <span className="rule-ink" aria-hidden />
+          <h2 className="display mt-6 max-w-[20ch] text-[clamp(2rem,6vw,4rem)] text-ink">
+            {h.askHeading}
           </h2>
-          <p className="mt-8 max-w-[62ch] text-[1.05rem] leading-[1.72]">{s.closingBody}</p>
+          <p className="mt-7 max-w-[58ch] text-[1.02rem] leading-[1.72] text-ink/80 md:text-[1.1rem]">
+            {h.askBody}
+          </p>
 
-          <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:items-baseline sm:gap-10">
-            <Link
-              href={`mailto:ekhrys@yahoo.com?subject=${encodeURIComponent(
-                locale === "fr" ? "Soutenir Bridge of Hope" : "Supporting Bridge of Hope"
-              )}`}
-              className="text-[1.05rem] tracking-[0.03em] text-live transition-opacity duration-200 hover:opacity-70"
-            >
-              {s.actionPrimary}
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
+            <Link href={`/${locale}/get-involved`} className="btn btn-navy w-full sm:w-auto">
+              {h.askPrimary}
             </Link>
-            <a
-              href="mailto:chrisekom@gmail.com?subject=Partnership"
-              className="border-b border-ink/25 pb-[2px] text-[0.95rem] transition-colors duration-200 hover:border-ink"
-            >
-              {s.actionPartner}
-            </a>
-            <a
-              href="tel:+237675033792"
-              className="border-b border-ink/25 pb-[2px] text-[0.95rem] transition-colors duration-200 hover:border-ink"
-            >
-              {s.actionServices}
+            <Link href={`/${locale}/contact`} className="btn btn-outline w-full sm:w-auto">
+              {h.askPartner}
+            </Link>
+            <a href="tel:+237675033792" className="btn btn-outline w-full sm:w-auto">
+              {h.askServices}
             </a>
           </div>
         </div>
