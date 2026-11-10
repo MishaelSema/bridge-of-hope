@@ -32,7 +32,9 @@ is the whole job.
 
 - **Archivo** — SIL Open Font License 1.1 — <https://fonts.google.com/specimen/Archivo>
 - **Instrument Serif** — SIL Open Font License 1.1 — <https://fonts.google.com/specimen/Instrument+Serif>
-- **Archivo Black** (social cards) — SIL Open Font License 1.1 — <https://fonts.google.com/specimen/Archivo+Black>
+
+Both are self-hosted by the site through `next/font`, so no request ever
+leaves the site for a font.
 
 ## When the real photography arrives
 

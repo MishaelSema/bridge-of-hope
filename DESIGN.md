@@ -1,10 +1,10 @@
 ---
 name: Bridge of Hope
-description: "Deep harbour navy, one living green, warm paper light. Heavy grotesque for anything shouted, light serif for anything human. Every photograph screened into a single duotone that lets its colour through on hover."
+description: "The foundation's deep teal, one living green, warm paper light. Heavy grotesque for anything shouted, light serif for anything human. Every photograph screened into a single duotone that lets its colour through on hover."
 colors:
-  ink: "#0c1a27"
-  ink-deep: "#07121c"
-  ink-soft: "#16283a"
+  ink: "#053a52"
+  ink-deep: "#022634"
+  ink-soft: "#0e4158"
   mint: "#7fd6a9"
   mint-deep: "#2f8f66"
   green-ink: "#14654a"
@@ -91,7 +91,7 @@ components:
     textColor: "{colors.ink}"
   frame:
     backgroundColor: "{colors.ink}"
-    backgroundImage: "linear-gradient(165deg, #16344c 0%, #0c1a27 55%, #07121c 100%)"
+    backgroundImage: "linear-gradient(165deg, #0f4a63 0%, #053a52 55%, #022634 100%)"
   card:
     backgroundColor: "{colors.paper}"
     boxShadow: "0 18px 44px -26px rgba(7, 18, 28, 0.55)"
@@ -103,13 +103,13 @@ components:
 
 **Creative North Star: "The Harbour"**
 
-Bridge of Hope speaks in the register of a harbour: deep navy water, one signal green, photographs screened to a single blue-green duotone so that no two images fight each other, and a heavy grotesque that shouts only when it means to. Everything is built mobile first — a phone is the primary instrument of a foundation whose beneficiaries read on small screens — and the layout widens from there without changing its mind.
+Bridge of Hope speaks in the register of a harbour: deep teal water, one signal green, photographs screened to a single blue-green duotone so that no two images fight each other, and a heavy grotesque that shouts only when it means to. Everything is built mobile first — a phone is the primary instrument of a foundation whose beneficiaries read on small screens — and the layout widens from there without changing its mind.
 
-The system is deliberately simple to apply: three grounds (navy, white, warm sand), one green, one type family for everything that is read and one light serif for the one thing that should feel human, and a single rule that no heading ever gets a kicker above it.
+The system is deliberately simple to apply: three grounds (teal, white, warm sand), one green, one type family for everything that is read and one light serif for the one thing that should feel human, and a single rule that no heading ever gets a kicker above it.
 
 **Key characteristics:**
 - **Mobile first, always.** Every layout is written for 390px and widened at `sm` 640, `md` 768, `lg` 1024, `xl` 1280.
-- **Three grounds.** Navy for the hero and the footer, white for reading, warm sand for banding. The green is the only accent and it means "act here".
+- **Three grounds.** Teal for the hero and the footer, white for reading, warm sand for banding. The green is the only accent and it means "act here".
 - **One accent, used as action.** Green fills the primary button, the rule above a live heading, and the calling section. It is never decoration.
 - **No eyebrow headings.** A heading stands alone. Small uppercase text is a label, a caption or a credit — never a kicker announcing the heading below it.
 - **No icon set.** The only marks are a two-line menu button drawn in CSS, a text arrow on links, and a mint rule. No emoji, no icon font, no decorative glyphs.
@@ -119,16 +119,16 @@ The system is deliberately simple to apply: three grounds (navy, white, warm san
 ## Colors
 
 ### Primary
-- **Live Green** (`colors.mint`, `#7fd6a9`): the act. Primary buttons, the rule above a live heading, the calling section. On navy it reads at very high contrast; it is never used as small text on white.
+- **Live Green** (`colors.mint`, `#7fd6a9`): the act. Primary buttons, the rule above a live heading, the calling section. On teal it reads at very high contrast; it is never used as small text on white.
 - **Green Ink** (`colors.green-ink`, `#14654a`): green as small text on light grounds — figure labels, small links. 5.4:1 on white.
 
 ### Neutral
 - **Ink** (`colors.ink`, `#0c1a27`): every dark ground and every headline. Also the hover fill for the mint button.
 - **Ink Deep** (`colors.ink-deep`, `#07121c`): the ground behind photography.
 - **Sand** (`colors.sand`, `#f6f3ec`): the warm band that separates two white sections.
-- **Paper** (`colors.paper`): white — the reading ground, the card surface, the text on navy and on green.
+- **Paper** (`colors.paper`): white — the reading ground, the card surface, the text on teal and on green.
 - **Slate** (`colors.slate`, `#5b6675`): muted text on light grounds. 5.9:1 on white.
-- **Fog** (`colors.fog`, `#aeb6bf`): muted text on navy. 8.1:1 on ink.
+- **Fog** (`colors.fog`, `#aeb6bf`): muted text on teal. 8.1:1 on ink.
 - **Mist** (`colors.mist`, `#e2e5e8`): hairlines on light grounds.
 
 ### Named Rules
@@ -159,7 +159,7 @@ The system is deliberately simple to apply: three grounds (navy, white, warm san
 
 **Container:** 1400px max, 20px side padding on mobile, 32px from `md`.
 
-**Grounds:** navy → white → sand → white → green → navy (footer). The reading order alternates so that no two white sections touch.
+**Grounds:** teal → white → sand → white → green → teal (footer). The reading order alternates so that no two white sections touch.
 
 **First viewport:** the hero fills `92svh` on mobile and `96svh` from `md`; the title, the mission line and the two actions sit on the ground of the photograph; the three cards break out of it by 48–80px.
 
@@ -175,7 +175,7 @@ The system is deliberately simple to apply: three grounds (navy, white, warm san
 Depth is carried by the photograph and the card, not by decoration.
 
 - **Cards** are white on the page ground with a single soft shadow (`0 18px 44px -26px rgba(7,18,28,.55)`) that deepens on hover while the card lifts 6px.
-- **Photographs** sit on the navy gradient ground, screened, washed and grained.
+- **Photographs** sit on the teal gradient ground, screened, washed and grained.
 - **Sections** change ground instead of gaining a border.
 
 ### Named Rules
@@ -183,16 +183,16 @@ Depth is carried by the photograph and the card, not by decoration.
 
 ## Shapes
 
-Every corner is sharp. Buttons, cards, frames and panels are all radius 0. Structure is drawn with 1px rules in `mist` on light grounds and `rgba(255,255,255,.10)` on navy.
+Every corner is sharp. Buttons, cards, frames and panels are all radius 0. Structure is drawn with 1px rules in `mist` on light grounds and `rgba(255,255,255,.10)` on teal.
 
 ## Components
 
 ### Buttons
 - **Shape:** rectangular, no radius, no shadow, `17px 30px` padding.
 - **Primary (mint):** green ground, ink label. Hover → white ground.
-- **Ink:** navy ground, paper label. Hover → green ground.
+- **Ink:** teal ground, paper label. Hover → green ground.
 - **White:** paper ground, ink label. Hover → ink ground. Used on the green calling section.
-- **Outline:** transparent with a 1px ink border; hover fills with ink and inverts the label. On navy, `btn-outline-light` uses a paper border.
+- **Outline:** transparent with a 1px ink border; hover fills with ink and inverts the label. On teal, `btn-outline-light` uses a paper border.
 - **Focus:** a 2px mint outline at 3px offset, everywhere.
 
 ### Links
@@ -200,10 +200,10 @@ Every corner is sharp. Buttons, cards, frames and panels are all radius 0. Struc
 - **Quiet link:** a 1px underline at 28% opacity, strengthening on hover. Used in the footer and in lists.
 
 ### The Frame (photography)
-A `figure` with a navy gradient ground; the image is desaturated and screened onto that ground, washed with a top-to-bottom gradient for legibility, and finished with press grain. On hover the duotone releases: the filter clears, the blend returns to normal, the opacity rises to full, and the image scales 4% over 900ms. Frames can be given `tone="colour"` to skip the treatment entirely.
+A `figure` with a teal gradient ground; the image is desaturated and screened onto that ground, washed with a top-to-bottom gradient for legibility, and finished with press grain. On hover the duotone releases: the filter clears, the blend returns to normal, the opacity rises to full, and the image scales 4% over 900ms. Frames can be given `tone="colour"` to skip the treatment entirely.
 
 ### The Menu Panel
-A full-screen navy panel: the wordmark, eight numbered links in display type, the primary action, the contact details and the language switch. The button that opens it is two lines drawn in CSS (no glyph, no icon font). The panel locks the page behind it and closes on Escape.
+A full-screen teal panel: the wordmark, eight numbered links in display type, the primary action, the contact details and the language switch. The button that opens it is two lines drawn in CSS (no glyph, no icon font). The panel locks the page behind it and closes on Escape.
 
 ### The Page Hero
 An inner page opens with a band of photography (`46vh` mobile, `64vh` from `md`), the page title set over it in paper, a mint rule above the title, and the lead beneath the band on white.

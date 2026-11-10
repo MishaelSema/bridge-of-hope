@@ -9,11 +9,13 @@ how to extend it.
 |---|---|
 | Per-page title, description, keywords | `site/lib/seo.ts` → `buildMetadata()`, called from each page's `generateMetadata` |
 | Canonical URL + `hreflang` (en, fr, x-default) | `site/lib/seo.ts` |
-| Open Graph + Twitter cards | `site/lib/seo.ts`, with a **generated image per page** |
-| Social thumbnail generation | `site/lib/og.tsx` + `opengraph-image.tsx` in every route folder (1200×630 PNG, drawn on the fly) |
+| Open Graph + Twitter cards | `site/lib/seo.ts`, using the foundation's own 1200×630 card |
+| Social thumbnail | `site/public/bridge_of_hope_opengraph_1200x630.png` — used on every static page; journal posts carry their own photograph |
+| Favicon and touch icons | `site/public/favicon.svg`, `favicon.ico`, `favicon-96x96.png`, `apple-touch-icon.png` |
+| Web app manifest | `site/public/site.webmanifest` |
 | XML sitemap | `site/app/sitemap.ts` — every route, both languages, blog posts included |
 | `robots.txt` | `site/app/robots.ts` — allows the site, blocks `/api/`, points at the sitemap |
-| Favicon | `site/app/icon.svg` — the bridge mark on navy |
+| Favicon | `site/public/favicon.svg` + `favicon.ico` — the foundation's own mark |
 | Structured data | `NGO` + `WebSite` JSON-LD in the layout; `Article` JSON-LD on blog posts |
 | Language switch | `x-default` → English; each page declares its own alternates |
 
@@ -77,7 +79,8 @@ Cameroonian audience searching in French and English.
 1. After deploying, submit `https://<domain>/sitemap.xml` in Google Search
    Console and Bing Webmaster Tools.
 2. Check the social card once in the debugger (LinkedIn, WhatsApp, X) — the
-   generated PNG is served from `/en/opengraph-image` and `/fr/opengraph-image`.
+   card is `bridge_of_hope_opengraph_1200x630.png`, and a journal post carries
+   its own photograph instead.
 3. When a post is added to `site/lib/posts.ts`, the sitemap, the blog index,
    the "read next" rail and the Article structured data update automatically.
 4. `noIndex` is available in `buildMetadata({ noIndex: true })` for pages that
