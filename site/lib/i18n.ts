@@ -139,7 +139,7 @@ const en = {
     locations: "Headquarters and rehabilitation centre in Yaoundé. Operational facilities at Ekombitié village, ~70 km from Yaoundé.",
     accessibility:
       "This site is built to WCAG 2.2 AA. If any part of it obstructs you, write to us and we will fix it.",
-    legal: "Registered NGO, MINATD, under Law No. 2010/011.",
+    legal: "Registered NGO, MINAT, under Law No. 99/014 of 22 December 1999.",
   },
 };
 
@@ -278,7 +278,7 @@ const fr: typeof en = {
       "Siège et centre de réhabilitation à Yaoundé. Installations opérationnelles au village d'Ekombitié, à ~70 km de Yaoundé.",
     accessibility:
       "Ce site est conforme au niveau AA de la norme WCAG 2.2. S'il vous entrave quelque part, écrivez-nous et nous le corrigerons.",
-    legal: "ONG enregistrée au MINATD, en vertu de la Loi n° 2010/011.",
+    legal: "ONG agréée au MINAT en vertu de la Loi n° 99/014 du 22 décembre 1999.",
   },
 };
 

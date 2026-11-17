@@ -111,7 +111,7 @@ AGok ori?<br>fs ix “a<br>von Ig<br><!-- End of picture text -->
 
 ### **Connecting Communities and Opportunities** 
 
-- NGO registered with the Ministry of Territorial Administration (MINATD) under Cameroonian law (Law No. 2010/011 on the Freedom of Association in Cameroon). 
+- NGO approved by the Ministry of Territorial Administration (MINAT) under Law No. 99/014 of 22 December 1999 governing NGOs, within the framework of Law No. 90/053 of 19 December 1990 on freedom of association. 
 
 ## **Locations:** 
 
@@ -368,7 +368,7 @@ Administrative & operational expenses [Insert amount]
 |Low participation in<br>programs|Awareness campaigns, incentives, ensure accessibility|
 |Staff turnover|Competitive compensation, training, career growth<br>opportunities|
 |Equipment maintenance|Service contracts, regular maintenance schedule|
-|Regulatory changes|Compliance with MINATD NGO regulations, disability<br>laws, and labor laws|
+|Regulatory changes|Compliance with MINAT NGO regulations, disability<br>laws, and labor laws|
 
 
 

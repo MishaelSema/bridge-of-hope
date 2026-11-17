@@ -31,6 +31,21 @@ export const pages = {
       partnersHeading: "Who it works with",
       partners:
         "Local authorities, health professionals, NGOs and international partners, community leaders, the Ministry of Social Affairs and MINSANTE, and local businesses for training and employment.",
+      legalHeading: "Legal status",
+      legal: [
+        {
+          term: "NGO approval",
+          text: "Law No. 99/014 of 22 December 1999 governing non-governmental organisations. Approval is granted by order of the Minister of Territorial Administration, on the opinion of the Technical Commission.",
+        },
+        {
+          term: "Freedom of association",
+          text: "Law No. 90/053 of 19 December 1990, as amended by Law No. 2021/022 of 16 December 2021 — the framework within which NGOs are created and operate.",
+        },
+        {
+          term: "Disability rights",
+          text: "Law No. 2010/002 of 13 April 2010 on the protection and promotion of persons with disabilities, applied by Decree No. 2018/6233/PM of 26 July 2018.",
+        },
+      ],
     },
     founder: {
       title: "The founder",
@@ -245,6 +260,21 @@ export const pages = {
       partnersHeading: "Avec qui elle travaille",
       partners:
         "Autorités locales, professionnels de santé, ONG et partenaires internationaux, leaders communautaires, ministère des Affaires sociales et MINSANTE, et entreprises locales pour la formation et l'emploi.",
+      legalHeading: "Statut juridique",
+      legal: [
+        {
+          term: "Agrément ONG",
+          text: "Loi n° 99/014 du 22 décembre 1999 régissant les organisations non gouvernementales. L'agrément est accordé par arrêté du ministre de l'Administration territoriale, après avis de la Commission technique.",
+        },
+        {
+          term: "Liberté d'association",
+          text: "Loi n° 90/053 du 19 décembre 1990, modifiée par la Loi n° 2021/022 du 16 décembre 2021 — le cadre dans lequel les ONG se créent et exercent leurs activités.",
+        },
+        {
+          term: "Droits des personnes handicapées",
+          text: "Loi n° 2010/002 du 13 avril 2010 portant protection et promotion des personnes handicapées, dont les modalités d'application sont fixées par le décret n° 2018/6233/PM du 26 juillet 2018.",
+        },
+      ],
     },
     founder: {
       title: "Le fondateur",

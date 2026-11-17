@@ -163,11 +163,18 @@ export default async function AboutPage({
               {p.partnersHeading}
             </h2>
             <p className="mt-6 max-w-[52ch] text-[1rem] leading-[1.75]">{p.partners}</p>
-            <p className="mt-6 text-[0.78rem] leading-[1.6] tracking-[0.04em] text-slate">
-              {locale === "en"
-                ? "Registered NGO, MINATD, under Law No. 2010/011."
-                : "ONG enregistrée au MINATD, en vertu de la Loi n° 2010/011."}
-            </p>
+
+            <div className="mt-10 border-t border-ink/12 pt-6">
+              <h3 className="label text-ink/55">{p.legalHeading}</h3>
+              <dl className="mt-4 space-y-3">
+                {p.legal.map((item) => (
+                  <div key={item.term} className="text-[0.8rem] leading-[1.6]">
+                    <dt className="inline font-semibold text-ink">{item.term}</dt>
+                    <dd className="inline text-slate"> — {item.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </section>

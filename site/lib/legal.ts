@@ -137,11 +137,11 @@ export const legal = {
         paragraphs: {
           en: [
             "We take care to keep the information on this site accurate and current, but we give no warranty that it is complete or error-free, and we accept no liability for decisions taken on the basis of it alone. Links to external websites are provided for convenience; we do not control those sites and are not responsible for their content.",
-            "These terms are governed by the laws of the Republic of Cameroon. The foundation is registered with MINATD under Law No. 2010/011.",
+            "These terms are governed by the laws of the Republic of Cameroon. The foundation holds NGO approval (agrément) from the Minister of Territorial Administration under Law No. 99/014 of 22 December 1999, which applies within the framework of Law No. 90/053 of 19 December 1990 on freedom of association.",
           ],
           fr: [
             "Nous veillons à l'exactitude et à l'actualité des informations de ce site, mais nous ne garantissons pas qu'elles soient complètes ou sans erreur, et n'assumons aucune responsabilité pour les décisions prises sur leur seule base. Les liens vers des sites externes sont fournis par commodité ; nous ne contrôlons pas ces sites et ne sommes pas responsables de leur contenu.",
-            "Ces conditions sont régies par les lois de la République du Cameroun. La fondation est enregistrée au MINATD en vertu de la Loi n° 2010/011.",
+            "Ces conditions sont régies par les lois de la République du Cameroun. La fondation est agréée au statut d'ONG par le ministre de l'Administration territoriale en vertu de la Loi n° 99/014 du 22 décembre 1999, qui s'applique dans le cadre de la Loi n° 90/053 du 19 décembre 1990 relative à la liberté d'association.",
           ],
         },
       },

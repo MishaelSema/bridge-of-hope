@@ -13,7 +13,7 @@ Next.js (App Router) + MongoDB + Cloudinary (image storage) + SMTP (form email n
 ## Users
 
 1. **Donors, grant-making foundations and international NGOs** — evaluating whether Bridge of Hope is credible enough to fund an ask of ~600 million XAF (≈ USD $1M) for setup plus first two years.
-2. **Partners** — Cameroonian authorities (MINATD, Ministry of Social Affairs, MINSANTE), hospitals, schools, local businesses, and the sibling ACE entities.
+2. **Partners** — Cameroonian authorities (MINAT, Ministry of Social Affairs, MINSANTE), hospitals, schools, local businesses, and the sibling ACE entities.
 3. **Persons with disabilities and their families/caregivers** in Yaoundé and rural communities (incl. Ekombitié village, ~70 km from Yaoundé) — trying to find out what services exist and how to reach them.
 4. **The general public** — audience for anti-stigma advocacy and awareness.
 
@@ -28,7 +28,7 @@ Bridge of Hope combines **rehabilitation + vocational/technical training + advoc
 ## Operating Context
 
 - HQ and rehabilitation centre: Yaoundé, Cameroon. Operational facilities: Ekombitié village (~70 km out) — farmland, poultry, workshops, residential quarters.
-- Legal: NGO registered with MINATD under Law No. 2010/011.
+- Legal: NGO approved by the Ministry of Territorial Administration (MINAT) under Law No. 99/014 of 22 December 1999, within the framework of Law No. 90/053 of 19 December 1990 on freedom of association.
 - Part of the **ACE Global Nexus** mosaic (ACE Global Nexus consulting · ACE-AGRO Farms · Bridge of Hope Foundation · ACE Influencer Series).
 - Founder: Ekom Christopher Anyang (also written *Christopher A. Ekom*, *Anyang Christopher Ekom* — name form is an open question, see Evidence), 22+ years commercial diplomacy at the U.S. Embassy Yaoundé; also Founder/CEO of ACE Global Nexus.
 - Documents in this folder are OCR extractions of a scanned PDF (garbled `picture text` artefacts, broken tables). Content is authoritative; formatting is not.

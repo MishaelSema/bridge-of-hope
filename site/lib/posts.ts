@@ -237,11 +237,11 @@ export const posts: Post[] = [
         paragraphs: {
           en: [
             "Quarterly and annual reports go to funders and stakeholders. Beneficiary surveys and feedback sessions are part of the routine, not an exception. Regular audits and impact assessments sit alongside them, and a final evaluation closes the first cycle.",
-            "Money is reported with the same discipline as outcomes. The foundation is registered with MINATD under Law No. 2010/011, and the accounts of a public charity should be as legible as its results.",
+            "Money is reported with the same discipline as outcomes. The foundation holds NGO approval under Law No. 99/014 of 22 December 1999, and the accounts of a public charity should be as legible as its results.",
           ],
           fr: [
             "Des rapports trimestriels et annuels vont aux financeurs et aux parties prenantes. Les enquêtes et les sessions de retour des bénéficiaires font partie de la routine, pas de l'exception. Des audits réguliers et des évaluations d'impact les accompagnent, et une évaluation finale clôt le premier cycle.",
-            "L'argent est rapporté avec la même rigueur que les résultats. La fondation est enregistrée au MINATD en vertu de la Loi n° 2010/011, et les comptes d'une organisation publique doivent être aussi lisibles que ses résultats.",
+            "L'argent est rapporté avec la même rigueur que les résultats. La fondation est agréée au statut d'ONG en vertu de la Loi n° 99/014 du 22 décembre 1999, et les comptes d'une organisation d'intérêt public doivent être aussi lisibles que ses résultats.",
           ],
         },
       },
